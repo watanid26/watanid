@@ -1,0 +1,68 @@
+[
+  {
+    "slug": "tapalarm",
+    "thumbnail": "/images/logo2.png",
+    "link": "#",
+    "status": "published",
+    "order": 2,
+    "featured": true,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "TapAlarm",
+      "description": "Wake up for sure, with simple and gentle taps."
+    },
+    "ko": {
+      "title": "탭알람",
+      "description": "불쾌함 없이, 확실하게 깨우는 탭 기반 알람."
+    },
+    "ja": {
+      "title": "タップアラーム",
+      "description": "不快感なく、タップ操作で確実に目覚めるアラーム。"
+    }
+  },
+  {
+    "slug": "colorzcam",
+    "thumbnail": "/images/Colorz.png",
+    "link": "#",
+    "status": "published",
+    "order": 1,
+    "featured": true,
+    "playStoreUrl": "",
+    "appStoreUrl": "https://apps.apple.com/kr/app/colorzcam/id6755992162",
+    "en": {
+      "title": "ColorzCam",
+      "description": "Capture every color around you and curate your own aesthetic palette with ColorzCam."
+    },
+    "ko": {
+      "title": "",
+      "description": "카메라로 발견하는 일상의 모든 색, 나만의 감성 컬러 팔레트로 기록하세요."
+    },
+    "ja": {
+      "title": "",
+      "description": "カメラで日常のあらゆる色を捉え、あなただけの感性豊かなカラーパレットとして記録しましょう。"
+    }
+  },
+  {
+    "slug": "kanji2136",
+    "thumbnail": "/images/512.png",
+    "link": "#",
+    "status": "published",
+    "order": 3,
+    "featured": true,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "Japanese Kanji 2136",
+      "description": "Master 2,136 Joyo Kanji with your smartest learning companion."
+    },
+    "ko": {
+      "title": "일본상용한자 2136",
+      "description": "당신의 한자 학습을 돕는 가장 똑똑한 친구, 상용 한자 2,136자를 마스터하세요."
+    },
+    "ja": {
+      "title": "漢字 2136",
+      "description": "常用漢字2,136字の習得、あなたの一番身近な学習パートナーと一緒に。"
+    }
+  }
+]

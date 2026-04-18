@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1 {
+    @apply text-5xl font-semibold tracking-tight text-foreground md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight text-foreground md:text-4xl;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-black/70;
+  }
+}
+
+@layer components {
+  .ds-section-title {
+    @apply text-3xl font-semibold tracking-tight text-foreground md:text-4xl;
+  }
+
+  .ds-body {
+    @apply text-base leading-relaxed text-black/70;
+  }
+
+  .ds-label {
+    @apply text-xs uppercase tracking-widest text-black/40;
+  }
+
+  .ds-hero-title {
+    @apply text-5xl font-semibold tracking-tight md:text-6xl;
+  }
+}
+
+@keyframes subtleLight {
+  0% {
+    transform: translateX(-35%);
+  }
+
+  50% {
+    transform: translateX(35%);
+  }
+
+  100% {
+    transform: translateX(-35%);
+  }
+}
+
+.animate-subtle-light {
+  animation: subtleLight 9s ease-in-out infinite;
+}
+
+@keyframes subtleLightReverse {
+  0% {
+    transform: translateX(25%);
+  }
+
+  50% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.animate-subtle-light-reverse {
+  animation: subtleLightReverse 13s ease-in-out infinite;
+}

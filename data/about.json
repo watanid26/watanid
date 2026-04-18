@@ -1,0 +1,40 @@
+{
+  "en": {
+    "intro": "Watanid is a place where I share things I build because I actually need them.",
+    "paragraphs": [
+      "I create small, simple tools that solve real problems without unnecessary features.",
+      "I focus on making products that are simple, reliable, and ready to be used in everyday life."
+    ],
+    "labels": {
+      "fieldNotes": "Watanid"
+    },
+    "fieldNotesAttribution": " ",
+    "fieldNotesQuote": "🛠 small things"
+  },
+  "ko": {
+    "intro": "Watanid는 제가 실제로 필요해서 만든 것들을 공유하는 공간입니다.",
+    "paragraphs": [
+      "불필요한 기능 없이 현실적인 문제를 해결하기 위한 작고 단순한 도구들을 만듭니다.",
+      "저는 일상에서 믿고 쓸 수 있는, 단순하고 안정적인 제품을 만드는 데 집중합니다."
+    ],
+    "fieldNotesQuote": " 🛠 작은 것들\n",
+    "labels": {
+      "fieldNotes": "Watanid",
+      "contactHeading": "연락처"
+    },
+    "fieldNotesAttribution": " "
+  },
+  "ja": {
+    "intro": "ワタニドは、自分が実際に必要として作ったものを共有する場所です。",
+    "paragraphs": [
+      "不要な機能を省き、現実的な問題を解決するための小さくシンプルなツールを作っています。",
+      "日常で安心して使える、シンプルで信頼できる製品づくりに集中しています。"
+    ],
+    "fieldNotesQuote": " 🛠 小さなもの",
+    "labels": {
+      "fieldNotes": "Watanid",
+      "contactHeading": "連絡先情報"
+    },
+    "fieldNotesAttribution": " "
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#D8D4CA"/>
+  <g opacity="0.7" filter="url(#blur-lg)">
+    <circle cx="1210" cy="220" r="280" fill="#F1EEE7"/>
+    <circle cx="370" cy="720" r="260" fill="#C7C2B5"/>
+    <circle cx="820" cy="510" r="220" fill="#B2AE9F"/>
+  </g>
+  <g opacity="0.42" stroke="#6B705C" stroke-width="2">
+    <path d="M-40 690C171 580 392 567 617 625C859 688 1060 697 1291 602C1417 550 1517 519 1652 530"/>
+    <path d="M-10 760C222 681 451 688 640 737C874 798 1115 794 1362 703C1469 664 1551 635 1650 640"/>
+  </g>
+  <g opacity="0.25" filter="url(#blur-sm)">
+    <rect x="960" y="0" width="640" height="900" fill="#9EA48D"/>
+  </g>
+  <defs>
+    <filter id="blur-lg" x="-90" y="-140" width="1650" height="1260" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_1_1"/>
+    </filter>
+    <filter id="blur-sm" x="860" y="-100" width="840" height="1100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_1_2"/>
+    </filter>
+  </defs>
+</svg>
