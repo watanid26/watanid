@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { HeaderMobileMenu } from "@/components/HeaderMobileMenu";
 import type { Locale } from "@/lib/i18n-messages";
 import { getMessages } from "@/lib/i18n-messages";
 import type { PageRecord } from "@/lib/types";
@@ -24,7 +25,7 @@ export function Header({
 
   return (
     <header className="sticky top-0 z-20 border-b border-black/10 bg-white/95 backdrop-blur-sm supports-[backdrop-filter]:bg-white/90">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 md:px-10 md:py-5">
         <Link
           href="/"
           className="text-xl font-semibold tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
@@ -32,8 +33,9 @@ export function Header({
           Watanid
         </Link>
         <div className="flex items-center">
+          <HeaderMobileMenu locale={locale} links={links} />
           <nav
-            className="flex items-center gap-8 md:gap-10"
+            className="hidden items-center gap-8 md:flex md:gap-10"
             aria-label="Main"
           >
             {links.map((l) => (
@@ -46,7 +48,9 @@ export function Header({
               </Link>
             ))}
           </nav>
-          <LanguageSwitcher locale={locale} />
+          <div className="hidden md:block">
+            <LanguageSwitcher locale={locale} />
+          </div>
         </div>
       </div>
     </header>

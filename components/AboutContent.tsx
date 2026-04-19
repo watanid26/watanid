@@ -28,7 +28,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 /** 12열 그리드: 라벨·본문 x축을 페이지 전역에서 통일 (md+: 4 + 8) */
 const MAIN_GRID =
-  "grid grid-cols-12 gap-x-10 gap-y-10 md:items-start lg:gap-x-10";
+  "grid grid-cols-12 gap-x-6 gap-y-8 md:gap-x-10 md:gap-y-10 md:items-start lg:gap-x-10";
 
 const LABEL_COL = "col-span-12 md:col-span-4";
 const BODY_COL = "col-span-12 md:col-span-8";
@@ -195,7 +195,7 @@ export function AboutContent({
         {/* 1 — MASCOT + FIELD NOTES */}
         <section className={MAIN_GRID} aria-labelledby="about-field-notes-label">
           <Reveal className={LABEL_COL}>
-            <div className="flex aspect-square w-full max-w-[420px] items-center justify-center rounded-[6px] bg-[#f1efea] p-12 md:max-w-none md:p-16">
+            <div className="flex aspect-square w-full max-w-[420px] items-center justify-center rounded-[6px] bg-[#f1efea] p-8 sm:p-12 md:max-w-none md:p-16">
               <div className="relative h-full w-full min-h-[200px]">
                 <Image
                   src={mascotSrc}

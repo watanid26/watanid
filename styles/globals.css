@@ -7,8 +7,13 @@
 }
 
 @layer base {
+  html {
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background font-sans text-foreground antialiased;
+    overflow-x: clip;
   }
 
   h1 {

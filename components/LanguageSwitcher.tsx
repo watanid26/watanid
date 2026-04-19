@@ -14,7 +14,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
 
   return (
     <div
-      className="ml-6 flex items-center gap-1 rounded-full border border-black/10 bg-black/[0.03] p-1"
+      className="ml-0 flex items-center gap-1 rounded-full border border-black/10 bg-black/[0.03] p-1 md:ml-6"
       aria-label="Language switcher"
     >
       {locales.map((code) => (

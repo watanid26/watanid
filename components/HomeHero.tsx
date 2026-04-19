@@ -16,12 +16,12 @@ export function HomeHero({ viewAppsLabel }: { viewAppsLabel: string }) {
           className="relative z-0 block h-auto w-full max-w-[280px] object-contain md:max-w-[340px]"
         />
 
-        <h1 className="relative z-10 -mt-12 text-[4.25rem] font-semibold leading-none tracking-tight !text-white md:-mt-16">
+        <h1 className="relative z-10 -mt-10 text-[3.25rem] font-semibold leading-none tracking-tight !text-white sm:-mt-12 sm:text-[4.25rem] md:-mt-16">
           Watanid
         </h1>
         <p
           lang="en"
-          className="relative z-10 mt-1 text-[1.05rem] font-normal leading-none !text-white md:mt-1.5"
+          className="relative z-10 mt-1 text-[0.95rem] font-normal leading-none !text-white sm:text-[1.05rem] md:mt-1.5"
         >
           I build what I need.
         </p>
