@@ -15,6 +15,8 @@ export const messages = {
       intro:
         "Small tools built for real routines. Read the story, then open what you need.",
       viewApp: "View app →",
+      privacyLink: "Privacy",
+      privacyAria: "Privacy policy",
     },
     about: {
       title: "About",
@@ -81,6 +83,8 @@ export const messages = {
       intro:
         "실제 일상에서 나온 작은 도구들입니다. 이야기를 읽고, 필요한 것을 열어보세요.",
       viewApp: "앱 보기 →",
+      privacyLink: "개인정보 처리방침",
+      privacyAria: "개인정보 처리방침",
     },
     about: {
       title: "소개",
@@ -147,6 +151,8 @@ export const messages = {
       intro:
         "日々の習慣から生まれた小さなツールです。背景を読み、必要なものを開いてください。",
       viewApp: "アプリを見る →",
+      privacyLink: "プライバシー",
+      privacyAria: "プライバシーポリシー",
     },
     about: {
       title: "紹介",
