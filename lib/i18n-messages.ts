@@ -33,7 +33,7 @@ export const messages = {
       heroQuotePrefix: "I share things I build because I ",
       heroQuoteEmphasis: "actually",
       heroQuoteSuffix: " need them.",
-      signatureName: "Min Ho Jin",
+      signatureName: "",
       signatureRole: "Founder & maker",
       principlesLabel: "Principles",
       principlesIntro:
@@ -101,7 +101,7 @@ export const messages = {
       heroQuotePrefix: "제가 ",
       heroQuoteEmphasis: "정말",
       heroQuoteSuffix: " 필요해서 만든 것들을 나눕니다.",
-      signatureName: "진민호",
+      signatureName: "",
       signatureRole: "메이커",
       principlesLabel: "원칙",
       principlesIntro:
@@ -169,7 +169,7 @@ export const messages = {
       heroQuotePrefix: "自分が",
       heroQuoteEmphasis: "本当に",
       heroQuoteSuffix: "必要として作ったものを共有します。",
-      signatureName: "ジン・ミンホ",
+      signatureName: "",
       signatureRole: "メーカー",
       principlesLabel: "原則",
       principlesIntro:

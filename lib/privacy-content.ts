@@ -187,7 +187,7 @@ const s8Ko: PrivacySection = {
 중요한 변경이 있을 경우 본 페이지를 통해 사전에 안내합니다.
 
 문의: watanid26@gmail.com
-운영자: Watanid Studio (진민호 / Min Ho Jin / ジン・ミンホ)`,
+운영자: Watanid Studio`,
 };
 
 const s8En: PrivacySection = {
@@ -195,7 +195,7 @@ const s8En: PrivacySection = {
   body: `We may update this policy when laws or our services change. If changes are important, we will provide notice on this page when reasonable.
 
 Contact: watanid26@gmail.com
-Operator: Watanid Studio (진민호 / Min Ho Jin / ジン・ミンホ)`,
+Operator: Watanid Studio`,
 };
 
 const s8Ja: PrivacySection = {
@@ -203,7 +203,7 @@ const s8Ja: PrivacySection = {
   body: `法令またはサービスの変更に伴い、本ポリシーを改定することがあります。重要な変更がある場合は、合理的な範囲で本ページを通じて事前にお知らせします。
 
 お問い合わせ：watanid26@gmail.com
-運営：Watanid Studio（진민호 / Min Ho Jin / ジン・ミンホ）`,
+運営：Watanid Studio`,
 };
 
 const tapS1En: PrivacySection = {

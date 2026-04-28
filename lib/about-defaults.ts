@@ -145,9 +145,9 @@ export const DEFAULT_SIGNATURE: Record<
   Locale,
   { name: string; role: string }
 > = {
-  en: { name: "Min Ho Jin", role: "Founder & maker" },
-  ko: { name: "진민호", role: "메이커" },
-  ja: { name: "ジン・ミンホ", role: "メーカー" },
+  en: { name: "", role: "Founder & maker" },
+  ko: { name: "", role: "메이커" },
+  ja: { name: "", role: "メーカー" },
 };
 
 export const DEFAULT_FIELD_NOTES: Record<

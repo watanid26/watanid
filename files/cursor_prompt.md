@@ -201,7 +201,7 @@ about: {
   manifestoLabel: "Manifesto" / "선언" / "宣言",
   studioLabel: "Watanid Studio" / "와타니드 스튜디오" / "ワタニド スタジオ",
   estLabel: "Est. 2025" / "Est. 2025" / "Est. 2025",
-  signatureName: "Min Ho Jin" / "진민호" / "ジン・ミンホ",
+  signatureName: "" (optional display name per locale),
   signatureRole: "Founder & maker" / "메이커" / "メーカー",
   principlesLabel: "Principles" / "원칙" / "原則",
   principlesIntro: "Three rules I keep coming back to when deciding what to ship." / "...",
