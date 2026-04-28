@@ -296,6 +296,184 @@ const kanjiS2Ja: PrivacySection = {
   body: `これらの情報は、端末上で学習機能を提供するためにのみ用います。アカウントや当方独自のサーバー解析には使用しません。広告に関する処理は、下記のとおり Google が行います。`,
 };
 
+/** Kanji 2136 – additional sections (Subscriptions, Notifications) and updated middle sections */
+const kanjiMiddleEn: PrivacySection[] = [
+  {
+    heading: "Advertising (Google AdMob)",
+    body: `This app shows banner ads through Google AdMob, provided by Google LLC. AdMob may collect and process the following information to deliver relevant ads and measure performance:
+
+• Advertising ID: IDFA on iOS, advertising ID (AAID) on Android
+• Device information: model, OS version, language, display size
+• Approximate location: country or region level from IP address
+• Ad interactions: impressions, clicks, and conversion-related data
+
+This information may be sent to and processed on Google's servers, including in the United States and other countries.
+
+Google Privacy Policy: https://policies.google.com/privacy
+How Google uses information for ads: https://policies.google.com/technologies/ads
+
+For users in the EEA, UK, and Switzerland, we obtain separate consent through the GDPR consent flow in the app.`,
+  },
+  {
+    heading: "Subscriptions & In-App Purchases",
+    body: `This app offers optional auto-renewable subscriptions. Purchases on iOS are processed by Apple Inc. through the App Store. Purchases on Android are processed by Google LLC through Google Play. We do not collect, store, or have access to your payment card information or billing details. All payment data is handled entirely by Apple or Google according to their respective policies.
+
+Apple Privacy Policy: https://www.apple.com/legal/privacy/
+Google Play Terms of Service: https://play.google.com/about/play-terms/`,
+  },
+  {
+    heading: "Notifications",
+    body: `This app may request permission to send local notifications for review reminders. Notification scheduling and delivery are handled entirely on your device. No notification content or timing data is transmitted to any server we operate.`,
+  },
+  {
+    heading: "Third-Party Services",
+    body: `Ad delivery may involve processing by Google AdMob and Google according to their terms. This app does not send your app-specific data to account systems or analytics servers we operate.
+
+How third parties handle data is governed by their own policies. For Google, please refer to the links above.`,
+  },
+  {
+    heading: "Your Choices (iOS / Android)",
+    body: `[iOS]
+• Settings > Privacy & Security > Tracking: turn off "Allow Apps to Request to Track" to limit IDFA-related collection.
+• Settings > Privacy & Security > Apple Advertising: you can turn off personalized ads.
+• Settings > Notifications: you can disable review reminder notifications at any time.
+
+[Android]
+• Settings > Google > Ads: "Delete advertising ID" issues a new advertising ID.
+• On the same screen, "Opt out of Ads Personalization" limits personalized ads.
+• Settings > Apps > Kanji 2136 > Notifications: you can disable notifications at any time.
+
+Users in the EEA, UK, and Switzerland can withdraw GDPR consent in the app at any time.`,
+  },
+  {
+    heading: "Data Retention",
+    body: `We do not store the app-specific data described in this policy on servers we operate. Data kept on your device remains until you uninstall the app or clear app data, unless the OS removes it sooner. Ad-related data is retained according to Google's policies. Subscription status is managed by Apple or Google and retained according to their policies.`,
+  },
+  {
+    heading: "Children's Privacy",
+    body: `This app is not directed to children under 13 (or the age required in your country). We do not knowingly collect personal information from children. If you believe such data was processed in error, contact us and we will take appropriate steps.`,
+  },
+];
+
+const kanjiMiddleKo: PrivacySection[] = [
+  {
+    heading: "광고 (Google AdMob)",
+    body: `본 앱은 Google LLC가 제공하는 Google AdMob을 통해 배너 광고를 표시합니다.
+AdMob은 맞춤형 광고 제공과 광고 성과 측정을 위해 다음 정보를 수집·처리할 수 있습니다.
+
+• 광고 식별자: iOS의 IDFA, Android의 광고 ID(AAID)
+• 기기 정보: 모델명, OS 버전, 언어 설정, 화면 크기
+• 대략적인 위치 정보: IP 주소 기반 국가/지역 수준
+• 광고 상호작용: 노출, 클릭, 전환 데이터
+
+수집된 정보는 Google의 서버(미국 등 해외)로 전송되어 처리됩니다.
+Google의 개인정보처리방침: https://policies.google.com/privacy
+Google의 광고 데이터 사용 안내: https://policies.google.com/technologies/ads
+
+EEA / UK / 스위스 사용자에게는 GDPR 동의창을 통해 별도로 동의를 받습니다.`,
+  },
+  {
+    heading: "구독 및 인앱 구매",
+    body: `본 앱은 선택적 자동 갱신 구독을 제공합니다. iOS의 결제는 App Store를 통해 Apple Inc.가, Android의 결제는 Google Play를 통해 Google LLC가 처리합니다. 당사는 결제 카드 정보나 청구 정보를 수집·저장하거나 접근하지 않습니다. 모든 결제 데이터는 Apple 또는 Google이 각자의 정책에 따라 전적으로 처리합니다.
+
+Apple 개인정보처리방침: https://www.apple.com/legal/privacy/
+Google Play 서비스 약관: https://play.google.com/about/play-terms/`,
+  },
+  {
+    heading: "알림",
+    body: `본 앱은 복습 알림을 위해 로컬 알림 권한을 요청할 수 있습니다. 알림 예약 및 전송은 기기에서만 처리됩니다. 알림 내용이나 시간 데이터는 당사가 운영하는 서버로 전송되지 않습니다.`,
+  },
+  {
+    heading: "제3자 서비스",
+    body: `광고 표시와 관련해 Google AdMob 및 Google이 정한 방식으로 정보가 처리될 수 있습니다.
+그 밖에 본 앱이 운영하는 계정 시스템이나 자체 분석 서버로 사용자 데이터를 보내지 않습니다.
+
+제3자의 처리 방식은 각 사업자의 정책을 따릅니다. Google 관련 안내는 위 링크를 참고해 주세요.`,
+  },
+  {
+    heading: "사용자 선택권 (iOS / Android)",
+    body: `[iOS]
+• 설정 > 개인정보 보호 및 보안 > 추적 에서 "앱이 추적을 요청하도록 허용" 옵션을 끄면
+  IDFA 수집을 차단할 수 있습니다.
+• 설정 > 개인정보 보호 및 보안 > Apple 광고 에서 개인 맞춤형 광고를 끌 수 있습니다.
+• 설정 > 알림 에서 복습 알림을 언제든지 끌 수 있습니다.
+
+[Android]
+• 설정 > Google > 광고 에서 "광고 ID 삭제"를 선택하면 새로운 광고 ID가 발급됩니다.
+• 같은 화면에서 "맞춤 광고 선택 해제"를 켜면 맞춤 광고 표시가 중단됩니다.
+• 설정 > 앱 > Kanji 2136 > 알림 에서 알림을 언제든지 끌 수 있습니다.
+
+EEA / UK / 스위스 사용자는 앱 내에서 GDPR 동의를 언제든 철회할 수 있습니다.`,
+  },
+  {
+    heading: "데이터 보관",
+    body: `본 앱이 직접 운영하는 서버에 본 방침에서 설명한 학습·알림 데이터를 저장하지 않습니다. 기기에 남는 데이터는 앱을 삭제하거나 앱 데이터를 지우기 전까지 기기에 남을 수 있으며, 운영체제 정책에 따라 달라질 수 있습니다.
+광고와 관련된 데이터는 Google의 정책에 따라 보관·삭제됩니다. 구독 상태는 Apple 또는 Google이 관리하며 각 사의 정책에 따라 보관됩니다.`,
+  },
+  {
+    heading: "아동 개인정보",
+    body: `본 앱은 만 13세 미만(또는 거주 국가에서 요구하는 연령) 아동을 대상으로 하지 않습니다. 고의로 아동의 개인정보를 수집하지 않습니다. 그런 처리가 있었다고 판단되면 연락 주시면 적절히 조치하겠습니다.`,
+  },
+];
+
+const kanjiMiddleJa: PrivacySection[] = [
+  {
+    heading: "広告（Google AdMob）",
+    body: `本アプリは、Google LLC が提供する Google AdMob を通じてバナー広告を表示します。AdMob は、関連性の高い広告の配信や広告効果の測定のために、次のような情報を収集・処理する場合があります。
+
+• 広告識別子：iOS の IDFA、Android の広告 ID（AAID）
+• 端末情報：機種名、OS バージョン、言語設定、画面サイズ
+• おおよその位置情報：IP アドレスに基づく国／地域レベル
+• 広告の相互作用：表示、クリック、コンバージョンに関するデータ
+
+収集された情報は、米国などの Google のサーバーに送信され、処理されることがあります。
+
+Google のプライバシーポリシー：https://policies.google.com/privacy
+広告におけるデータの使用：https://policies.google.com/technologies/ads
+
+EEA／英国／スイスにお住まいの方には、アプリ内の GDPR 同意フローで別途同意を取得します。`,
+  },
+  {
+    heading: "サブスクリプションとアプリ内購入",
+    body: `本アプリはオプションの自動更新サブスクリプションを提供しています。iOS での購入は App Store を通じて Apple Inc. が、Android での購入は Google Play を通じて Google LLC が処理します。当方は、お客様のお支払いカード情報や請求の詳細を収集・保存したり、アクセスしたりすることはありません。すべての決済データは、Apple または Google がそれぞれのポリシーに従い全面的に処理します。
+
+Apple プライバシーポリシー：https://www.apple.com/legal/privacy/
+Google Play 利用規約：https://play.google.com/about/play-terms/`,
+  },
+  {
+    heading: "通知",
+    body: `本アプリは、復習リマインダーのためにローカル通知の許可をリクエストすることがあります。通知のスケジューリングと配信はすべて端末上で処理されます。通知の内容やタイミングのデータが当方の運用するサーバーに送信されることはありません。`,
+  },
+  {
+    heading: "第三者サービス",
+    body: `広告表示にあたり、Google AdMob および Google の定める方法により情報が処理されることがあります。本アプリが運用するアカウント基盤や、当方独自の解析サーバーへ利用者データを送ることはありません。
+
+第三者の取り扱いは、各事業者のポリシーに従います。Google については上記リンクをご参照ください。`,
+  },
+  {
+    heading: "ユーザーの選択（iOS / Android）",
+    body: `[iOS]
+• 設定 > プライバシーとセキュリティ > トラッキング で「アプリからのトラッキング許可を求めることを許可」をオフにすると、IDFA に関する収集を制限できます。
+• 設定 > プライバシーとセキュリティ > Apple の広告 でパーソナライズされた広告をオフにできます。
+• 設定 > 通知 で復習リマインダー通知をいつでも無効にできます。
+
+[Android]
+• 設定 > Google > 広告 で「広告 ID を削除」を選ぶと、新しい広告 ID が発行されます。
+• 同じ画面で「パーソナライズされた広告をオプトアウトする」をオンにすると、パーソナライズされた広告表示を停止できます。
+• 設定 > アプリ > Kanji 2136 > 通知 で通知をいつでも無効にできます。
+
+EEA／英国／スイスのユーザーは、アプリ内で GDPR の同意をいつでも撤回できます。`,
+  },
+  {
+    heading: "データの保管",
+    body: `本ポリシーで説明する学習・通知に関するデータを、当方が運用するサーバーに保存することはありません。端末内に残るデータは、アプリを削除するかアプリデータを消去するまで端末に残る場合があり、OS の方針により異なることがあります。広告関連のデータは、Google のポリシーに従って保管・削除されます。サブスクリプションの状態は Apple または Google が管理し、それぞれのポリシーに従って保管されます。`,
+  },
+  {
+    heading: "児童のプライバシー",
+    body: `本アプリは、13 歳未満（またはお住まいの国で求められる年齢）の児童を対象としていません。児童から故意に個人情報を収集することはありません。誤ってそのような処理があったと思われる場合はご連絡ください。適切な対応を行います。`,
+  },
+];
+
 function middleSections(locale: Locale): PrivacySection[] {
   switch (locale) {
     case "en":
@@ -343,9 +521,21 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
     ja: buildContent("ja", "ColorzCam", camS1Ja, camS2Ja),
   },
   kanji2136: {
-    en: buildContent("en", "Japanese Kanji 2136", kanjiS1En, kanjiS2En),
-    ko: buildContent("ko", "일본상용한자 2136", kanjiS1Ko, kanjiS2Ko),
-    ja: buildContent("ja", "漢字2136（常用漢字）", kanjiS1Ja, kanjiS2Ja),
+    en: {
+      appName: "Kanji 2136",
+      labels: LABELS["en"],
+      sections: [kanjiS1En, kanjiS2En, ...kanjiMiddleEn, s8En],
+    },
+    ko: {
+      appName: "Kanji 2136",
+      labels: LABELS["ko"],
+      sections: [kanjiS1Ko, kanjiS2Ko, ...kanjiMiddleKo, s8Ko],
+    },
+    ja: {
+      appName: "Kanji 2136",
+      labels: LABELS["ja"],
+      sections: [kanjiS1Ja, kanjiS2Ja, ...kanjiMiddleJa, s8Ja],
+    },
   },
 };
 
