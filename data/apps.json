@@ -4,7 +4,7 @@
     "thumbnail": "/images/logo2.png",
     "link": "#",
     "status": "published",
-    "order": 2,
+    "order": 3,
     "featured": true,
     "playStoreUrl": "",
     "appStoreUrl": "",
@@ -26,7 +26,7 @@
     "thumbnail": "/images/Colorz.png",
     "link": "#",
     "status": "published",
-    "order": 1,
+    "order": 2,
     "featured": true,
     "playStoreUrl": "",
     "appStoreUrl": "https://apps.apple.com/kr/app/colorzcam/id6755992162",
@@ -48,12 +48,12 @@
     "thumbnail": "/images/512.png",
     "link": "#",
     "status": "published",
-    "order": 3,
+    "order": 1,
     "featured": true,
     "playStoreUrl": "",
-    "appStoreUrl": "",
+    "appStoreUrl": "https://apps.apple.com/kr/app/%EC%9D%BC%EB%B3%B8%EC%83%81%EC%9A%A9%ED%95%9C%EC%9E%90-2136-%EC%9D%BC%EB%B3%B8%EC%96%B4%ED%95%99%EC%8A%B5/id6762960703",
     "en": {
-      "title": "Japanese Kanji 2136",
+      "title": "Kanji 2136",
       "description": "Master 2,136 Joyo Kanji with your smartest learning companion."
     },
     "ko": {
