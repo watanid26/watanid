@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: "Watanid", template: "%s · Watanid" },
   description: "What I need — a minimal brand hub.",
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
+    icon: [{ url: "/logo/main.png", type: "image/png" }],
   },
 };
 
