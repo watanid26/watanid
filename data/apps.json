@@ -1,5 +1,27 @@
 [
   {
+    "slug": "lunamirror",
+    "thumbnail": "/images/luna-mirror.png",
+    "link": "#",
+    "status": "published",
+    "order": 0,
+    "featured": false,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "Luna Mirror",
+      "description": "A real-time mirror with color temperature, brightness, flip, and zoom — all processed on your device."
+    },
+    "ko": {
+      "title": "루나 미러",
+      "description": "색온도·밝기·좌우반전·확대까지, 기기 안에서만 동작하는 실시간 거울."
+    },
+    "ja": {
+      "title": "ルナミラー",
+      "description": "色温度・明るさ・左右反転・ズームまで、端末内だけで動くリアルタイムミラー。"
+    }
+  },
+  {
     "slug": "tapalarm",
     "thumbnail": "/images/logo2.png",
     "link": "#",

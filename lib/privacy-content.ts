@@ -1,6 +1,11 @@
 import type { Locale } from "@/lib/i18n-messages";
 
-export const PRIVACY_SLUGS = ["tapalarm", "colorzcam", "kanji2136"] as const;
+export const PRIVACY_SLUGS = [
+  "tapalarm",
+  "colorzcam",
+  "kanji2136",
+  "lunamirror",
+] as const;
 export type PrivacySlug = (typeof PRIVACY_SLUGS)[number];
 
 export type PrivacySection = {
@@ -18,6 +23,8 @@ export type PrivacyLabels = {
 export type PrivacyContent = {
   appName: string;
   labels: PrivacyLabels;
+  /** ISO date shown on the privacy page (e.g. 2026-05-25) */
+  effectiveDate?: string;
   sections: PrivacySection[];
 };
 
@@ -496,6 +503,183 @@ function section8(locale: Locale): PrivacySection {
   }
 }
 
+const lunaS1En: PrivacySection = {
+  heading: "Information We Collect",
+  body: `App settings (color temperature, brightness, flip, and zoom) are stored only on your device. The camera feed is processed in real-time locally and is never saved or transmitted. We do not send this data to servers we operate. Google AdMob may collect an advertising identifier and typical device information for ads, as described below.`,
+};
+
+const lunaS2En: PrivacySection = {
+  heading: "How We Use Information",
+  body: `Settings power the mirror features locally on your device. We do not use any data for accounts and analytics on our own servers. Ad-related processing is handled by Google as described below.`,
+};
+
+const lunaS1Ko: PrivacySection = {
+  heading: "수집하는 정보",
+  body: `색온도, 밝기, 좌우반전, 확대/축소 등 앱 설정값은 기기에만 저장됩니다. 카메라 영상은 실시간으로 기기 내에서만 처리되며, 저장되거나 외부로 전송되지 않습니다. 당사가 운영하는 서버로 이 데이터를 전송하지 않습니다. Google AdMob은 아래에 설명된 바와 같이 광고 식별자 및 기기 정보를 수집할 수 있습니다.`,
+};
+
+const lunaS2Ko: PrivacySection = {
+  heading: "정보 이용 방법",
+  body: `설정값은 기기에서 거울 기능을 구동하는 데만 사용됩니다. 당사 서버에서 계정이나 분석 목적으로 데이터를 사용하지 않습니다. 광고 관련 처리는 아래에 설명된 Google에 의해 이루어집니다.`,
+};
+
+const lunaS1Ja: PrivacySection = {
+  heading: "収集する情報",
+  body: `色温度、明るさ、左右反転、ズームなどのアプリ設定は、お使いのデバイスにのみ保存されます。カメラ映像はリアルタイムでデバイス内のみで処理され、保存または外部に送信されることはありません。当社が運営するサーバーにこのデータを送信することはありません。Google AdMobは、以下に説明するとおり、広告識別子および標準的なデバイス情報を収集する場合があります。`,
+};
+
+const lunaS2Ja: PrivacySection = {
+  heading: "情報の利用方法",
+  body: `設定は、デバイス上でミラー機能を動作させるためにのみ使用されます。当社のサーバーでアカウントや分析目的でデータを使用することはありません。広告関連の処理は、以下に説明するGoogleによって行われます。`,
+};
+
+const lunaMiddleEn: PrivacySection[] = [
+  {
+    heading: "Advertising (Google AdMob)",
+    body: `This app shows banner ads through Google AdMob, provided by Google LLC. AdMob may collect and process the following information to deliver relevant ads and measure performance:
+
+• Advertising ID: IDFA on iOS, advertising ID (AAID) on Android
+• Device information: model, OS version, language, display size
+• Approximate location: country or region level from IP address
+• Ad interactions: impressions, clicks, and conversion-related data
+
+This information may be sent to and processed on Google's servers, including in the United States and other countries.
+
+Google Privacy Policy: https://policies.google.com/privacy
+How Google uses information for ads: https://policies.google.com/technologies/ads
+
+For users in the EEA, UK, and Switzerland, we obtain separate consent through the GDPR consent flow in the app.`,
+  },
+  {
+    heading: "Camera",
+    body: `This app uses the front camera solely to display a real-time mirror preview on your screen. Camera images are processed entirely on your device and are never recorded, stored, or transmitted.`,
+  },
+  {
+    heading: "Third-Party Services",
+    body: `Ad delivery may involve processing by Google AdMob and Google according to their terms. This app does not send your app-specific data to account systems or analytics servers we operate.
+
+How third parties handle data is governed by their own policies. For Google, please refer to the links above.`,
+  },
+  {
+    heading: "Your Choices (iOS / Android)",
+    body: `[iOS]
+• Settings > Privacy & Security > Tracking: turn off "Allow Apps to Request to Track" to limit IDFA-related collection.
+• Settings > Privacy & Security > Apple Advertising: you can turn off personalized ads.
+
+[Android]
+• Settings > Google > Ads: "Delete advertising ID" issues a new advertising ID.
+• On the same screen, "Opt out of Ads Personalization" limits personalized ads.
+
+Users in the EEA, UK, and Switzerland can withdraw GDPR consent in the app at any time.`,
+  },
+  {
+    heading: "Data Retention",
+    body: `We do not store the app-specific data described in this policy on servers we operate. Data kept on your device remains until you uninstall the app or clear app data, unless the OS removes it sooner. Ad-related data is retained according to Google's policies.`,
+  },
+  {
+    heading: "Children's Privacy",
+    body: `This app is not directed to children under 13 (or the age required in your country). We do not knowingly collect personal information from children. If you believe such data was processed in error, contact us and we will take appropriate steps.`,
+  },
+];
+
+const lunaMiddleKo: PrivacySection[] = [
+  {
+    heading: "광고 (Google AdMob)",
+    body: `이 앱은 Google LLC에서 제공하는 Google AdMob을 통해 배너 광고를 표시합니다. AdMob은 관련 광고 게재 및 성과 측정을 위해 다음 정보를 수집·처리할 수 있습니다:
+
+• 광고 ID: iOS의 IDFA, Android의 광고 ID(AAID)
+• 기기 정보: 모델, OS 버전, 언어, 화면 크기
+• 대략적인 위치: IP 주소를 통한 국가 또는 지역 수준
+• 광고 상호작용: 노출, 클릭 및 전환 관련 데이터
+
+이 정보는 미국을 포함한 여러 국가에 있는 Google 서버로 전송되어 처리될 수 있습니다.
+
+Google 개인정보처리방침: https://policies.google.com/privacy
+Google의 광고 정보 활용 방식: https://policies.google.com/technologies/ads
+
+EEA, 영국, 스위스 이용자의 경우 앱 내 GDPR 동의 절차를 통해 별도의 동의를 받습니다.`,
+  },
+  {
+    heading: "카메라",
+    body: `이 앱은 화면에 실시간 거울 미리보기를 표시하기 위한 목적으로만 전면 카메라를 사용합니다. 카메라 영상은 기기 내에서만 처리되며, 녹화·저장·전송되지 않습니다.`,
+  },
+  {
+    heading: "제3자 서비스",
+    body: `광고 게재에는 Google AdMob 및 Google의 약관에 따른 처리가 포함될 수 있습니다. 이 앱은 당사가 운영하는 계정 시스템이나 분석 서버로 앱 고유 데이터를 전송하지 않습니다.
+
+제3자의 데이터 처리 방식은 해당 업체의 정책에 따릅니다. Google의 경우 위의 링크를 참고하시기 바랍니다.`,
+  },
+  {
+    heading: "이용자 선택 (iOS / Android)",
+    body: `[iOS]
+• 설정 > 개인정보 보호 및 보안 > 추적: '앱이 추적을 요청하도록 허용'을 끄면 IDFA 관련 수집을 제한할 수 있습니다.
+• 설정 > 개인정보 보호 및 보안 > Apple 광고: 개인화 광고를 끌 수 있습니다.
+
+[Android]
+• 설정 > Google > 광고: '광고 ID 삭제'를 선택하면 새 광고 ID가 발급됩니다.
+• 같은 화면에서 '광고 개인 최적화 사용 중지'를 선택하면 맞춤 광고를 제한할 수 있습니다.
+
+EEA, 영국, 스위스 이용자는 앱 내에서 언제든지 GDPR 동의를 철회할 수 있습니다.`,
+  },
+  {
+    heading: "데이터 보유",
+    body: `이 정책에 설명된 앱 고유 데이터는 당사가 운영하는 서버에 저장되지 않습니다. 기기에 저장된 데이터는 앱을 삭제하거나 앱 데이터를 초기화할 때까지 유지됩니다(OS에 의해 더 빨리 삭제될 수 있음). 광고 관련 데이터는 Google의 정책에 따라 보유됩니다.`,
+  },
+  {
+    heading: "아동 개인정보",
+    body: `이 앱은 13세 미만(또는 해당 국가에서 요구하는 연령 미만)의 아동을 대상으로 하지 않습니다. 아동의 개인정보를 의도적으로 수집하지 않습니다. 해당 데이터가 잘못 처리되었다고 생각되면 문의해 주시면 적절한 조치를 취하겠습니다.`,
+  },
+];
+
+const lunaMiddleJa: PrivacySection[] = [
+  {
+    heading: "広告（Google AdMob）",
+    body: `このアプリは、Google LLCが提供するGoogle AdMobを通じてバナー広告を表示します。AdMobは、関連性の高い広告の配信や効果測定のために、以下の情報を収集・処理する場合があります：
+
+• 広告ID：iOSのIDFA、AndroidのAdvertising ID（AAID）
+• デバイス情報：機種名、OSバージョン、言語、画面サイズ
+• おおよその位置情報：IPアドレスから判定される国または地域レベル
+• 広告インタラクション：インプレッション、クリック、コンバージョン関連データ
+
+この情報は、米国を含む複数の国のGoogleのサーバーに送信され処理される場合があります。
+
+Googleプライバシーポリシー: https://policies.google.com/privacy
+Googleの広告への情報活用方法: https://policies.google.com/technologies/ads
+
+EEA、英国、スイスのユーザーには、アプリ内のGDPR同意フローを通じて別途同意を取得します。`,
+  },
+  {
+    heading: "カメラ",
+    body: `このアプリは、画面にリアルタイムのミラープレビューを表示する目的のみで前面カメラを使用します。カメラ映像はデバイス内のみで処理され、録画・保存・送信されることはありません。`,
+  },
+  {
+    heading: "第三者サービス",
+    body: `広告配信には、Google AdMobおよびGoogleの利用規約に従った処理が含まれる場合があります。このアプリは、当社が運営するアカウントシステムや分析サーバーにアプリ固有のデータを送信しません。
+
+第三者によるデータ処理は、各社のポリシーに基づきます。Googleについては、上記のリンクをご参照ください。`,
+  },
+  {
+    heading: "お客様の選択（iOS / Android）",
+    body: `[iOS]
+• 設定 > プライバシーとセキュリティ > トラッキング：「アプリにトラッキングの許可を求めることを許可」をオフにすると、IDFA関連の収集を制限できます。
+• 設定 > プライバシーとセキュリティ > Appleの広告：パーソナライズ広告をオフにできます。
+
+[Android]
+• 設定 > Google > 広告：「広告IDを削除」で新しい広告IDが発行されます。
+• 同じ画面で「広告のパーソナライズをオプトアウト」を選択すると、パーソナライズ広告を制限できます。
+
+EEA、英国、スイスのユーザーは、アプリ内でいつでもGDPRの同意を撤回できます。`,
+  },
+  {
+    heading: "データの保持",
+    body: `このポリシーに記載されたアプリ固有のデータは、当社が運営するサーバーには保存されません。デバイスに保存されたデータは、アプリをアンインストールするかアプリデータを消去するまで保持されます（OSによってより早く削除される場合があります）。広告関連データはGoogleのポリシーに従い保持されます。`,
+  },
+  {
+    heading: "子どものプライバシー",
+    body: `このアプリは、13歳未満（またはお住まいの国で定められた年齢未満）の子どもを対象としていません。子どもの個人情報を意図的に収集することはありません。誤ってデータが処理されたと思われる場合は、ご連絡いただければ適切な措置を講じます。`,
+  },
+];
+
 function buildContent(
   locale: Locale,
   appName: string,
@@ -535,6 +719,26 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
       appName: "Kanji 2136",
       labels: LABELS["ja"],
       sections: [kanjiS1Ja, kanjiS2Ja, ...kanjiMiddleJa, s8Ja],
+    },
+  },
+  lunamirror: {
+    en: {
+      appName: "Luna Mirror",
+      labels: LABELS["en"],
+      effectiveDate: "2026-05-25",
+      sections: [lunaS1En, lunaS2En, ...lunaMiddleEn, s8En],
+    },
+    ko: {
+      appName: "루나 미러",
+      labels: LABELS["ko"],
+      effectiveDate: "2026-05-25",
+      sections: [lunaS1Ko, lunaS2Ko, ...lunaMiddleKo, s8Ko],
+    },
+    ja: {
+      appName: "ルナミラー",
+      labels: LABELS["ja"],
+      effectiveDate: "2026-05-25",
+      sections: [lunaS1Ja, lunaS2Ja, ...lunaMiddleJa, s8Ja],
     },
   },
 };

@@ -50,7 +50,7 @@ export default async function PrivacyPage({ params }: Props) {
             {c.appName}
           </h1>
           <p className="mt-6 text-sm text-stone-500">
-            {c.labels.effective}: 2026-04-25
+            {c.labels.effective}: {c.effectiveDate ?? "2026-04-25"}
           </p>
         </header>
 
