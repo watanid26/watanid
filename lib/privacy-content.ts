@@ -5,6 +5,7 @@ export const PRIVACY_SLUGS = [
   "colorzcam",
   "kanji2136",
   "lunamirror",
+  "kandanmemo",
 ] as const;
 export type PrivacySlug = (typeof PRIVACY_SLUGS)[number];
 
@@ -680,6 +681,93 @@ EEA、英国、スイスのユーザーは、アプリ内でいつでもGDPRの�
   },
 ];
 
+const memoS1En: PrivacySection = {
+  heading: "Information We Collect",
+  body: `KandanMemo stores your memos, attached files, app settings, reminder schedules, and app lock settings on your device by default. We do not operate servers that receive or store your memo contents, attached images, reminder text, or biometric data.
+
+The app may request the following permissions only when you use related features:
+
+• Photos: to attach images to memos and save images
+• Camera: to take a photo and attach it to a memo
+• Notifications: to schedule memo reminders
+• Face ID or biometric authentication: to unlock the app lock
+
+Google AdMob may collect an advertising identifier and typical device information for ads, as described below.`,
+};
+
+const memoS2En: PrivacySection = {
+  heading: "How We Use Information",
+  body: `Local memo data is used only to provide memo editing, attachments, reminders, and app lock features on your device. Biometric authentication is handled by the operating system; this app does not collect or store your face, fingerprint, or biometric templates.
+
+Advertising-related data, including ATT and advertising identifiers where available and permitted, may be used for personalized ads and ad performance measurement by Google AdMob.`,
+};
+
+const memoMiddleEn: PrivacySection[] = [
+  ...middleEn,
+  {
+    heading: "Data Deletion",
+    body: `Memos, attachments, settings, reminders, and app lock data stored locally are deleted when you uninstall the app or use an in-app data deletion/reset feature, unless your operating system or device backup keeps separate copies. Ad-related data is retained and deleted according to Google's policies.`,
+  },
+];
+
+const memoS1Ko: PrivacySection = {
+  heading: "수집하는 정보",
+  body: `간단메모는 메모, 첨부파일, 앱 설정, 알림 예약 정보, 앱 잠금 설정을 기본적으로 사용자 기기 내부에 저장합니다. 당사가 운영하는 서버로 메모 내용, 첨부 이미지, 알림 내용, 생체정보를 수신하거나 저장하지 않습니다.
+
+앱은 관련 기능을 사용할 때에만 다음 권한을 요청할 수 있습니다.
+
+• 사진 권한: 메모에 이미지 첨부 및 사진 저장
+• 카메라 권한: 사진 촬영 후 메모 첨부
+• 알림 권한: 메모 알림 예약
+• Face ID 또는 생체인증: 앱 잠금 해제
+
+Google AdMob은 아래 광고 섹션에 설명된 바와 같이 광고 식별자 및 일반적인 기기 정보를 수집할 수 있습니다.`,
+};
+
+const memoS2Ko: PrivacySection = {
+  heading: "정보 이용 목적",
+  body: `기기에 저장된 메모 데이터는 메모 작성, 첨부파일, 알림, 앱 잠금 기능을 기기에서 제공하는 데만 사용합니다. 생체인증은 운영체제에서 처리되며, 본 앱은 얼굴, 지문, 생체 템플릿을 수집하거나 저장하지 않습니다.
+
+광고 관련 데이터는 ATT 및 사용자가 허용한 광고 식별자를 포함해 Google AdMob의 맞춤형 광고 제공과 광고 성과 측정에 사용될 수 있습니다.`,
+};
+
+const memoMiddleKo: PrivacySection[] = [
+  ...middleKo,
+  {
+    heading: "데이터 삭제",
+    body: `기기에 저장된 메모, 첨부파일, 설정, 알림, 앱 잠금 데이터는 앱을 삭제하거나 앱 내 데이터 삭제/초기화 기능을 사용할 때 삭제됩니다. 다만 운영체제 또는 기기 백업에 별도 사본이 남을 수 있습니다. 광고 관련 데이터는 Google의 정책에 따라 보관·삭제됩니다.`,
+  },
+];
+
+const memoS1Ja: PrivacySection = {
+  heading: "収集する情報",
+  body: `かんたんメモは、メモ、添付ファイル、アプリ設定、通知予約、アプリロック設定を基本的にお使いの端末内に保存します。当社が運営するサーバーで、メモの内容、添付画像、通知内容、生体情報を受信または保存することはありません。
+
+本アプリは、関連機能を使用する場合に限り、次の権限をリクエストすることがあります。
+
+• 写真：メモへの画像添付および写真の保存
+• カメラ：写真を撮影してメモへ添付
+• 通知：メモのリマインダー予約
+• Face ID または生体認証：アプリロックの解除
+
+Google AdMob は、下記の広告セクションに記載するとおり、広告識別子および一般的な端末情報を収集する場合があります。`,
+};
+
+const memoS2Ja: PrivacySection = {
+  heading: "情報の利用目的",
+  body: `端末に保存されたメモデータは、メモ作成、添付ファイル、通知、アプリロック機能を端末上で提供するためにのみ使用されます。生体認証はOSにより処理され、本アプリが顔、指紋、生体テンプレートを収集または保存することはありません。
+
+広告関連データは、ATTおよびユーザーが許可した広告識別子を含め、Google AdMobによるパーソナライズ広告の配信および広告効果の測定に使用される場合があります。`,
+};
+
+const memoMiddleJa: PrivacySection[] = [
+  ...middleJa,
+  {
+    heading: "データの削除",
+    body: `端末に保存されたメモ、添付ファイル、設定、通知、アプリロックデータは、アプリをアンインストールするか、アプリ内のデータ削除／リセット機能を使用した場合に削除されます。ただし、OSまたは端末バックアップに別のコピーが残る場合があります。広告関連データはGoogleのポリシーに従って保持・削除されます。`,
+  },
+];
+
 function buildContent(
   locale: Locale,
   appName: string,
@@ -739,6 +827,26 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
       labels: LABELS["ja"],
       effectiveDate: "2026-05-25",
       sections: [lunaS1Ja, lunaS2Ja, ...lunaMiddleJa, s8Ja],
+    },
+  },
+  kandanmemo: {
+    en: {
+      appName: "KandanMemo",
+      labels: LABELS["en"],
+      effectiveDate: "2026-06-09",
+      sections: [memoS1En, memoS2En, ...memoMiddleEn, s8En],
+    },
+    ko: {
+      appName: "간단메모",
+      labels: LABELS["ko"],
+      effectiveDate: "2026-06-09",
+      sections: [memoS1Ko, memoS2Ko, ...memoMiddleKo, s8Ko],
+    },
+    ja: {
+      appName: "かんたんメモ",
+      labels: LABELS["ja"],
+      effectiveDate: "2026-06-09",
+      sections: [memoS1Ja, memoS2Ja, ...memoMiddleJa, s8Ja],
     },
   },
 };

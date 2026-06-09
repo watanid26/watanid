@@ -86,5 +86,27 @@
       "title": "漢字 2136",
       "description": "常用漢字2,136字の習得、あなたの一番身近な学習パートナーと一緒に。"
     }
+  },
+  {
+    "slug": "kandanmemo",
+    "thumbnail": "/images/kandanmemo.svg",
+    "link": "#",
+    "status": "published",
+    "order": 4,
+    "featured": false,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "KandanMemo",
+      "description": "A simple memo app for notes, images, reminders, and private app lock on your device."
+    },
+    "ko": {
+      "title": "간단메모",
+      "description": "메모, 이미지 첨부, 알림, 앱 잠금을 기기 안에서 간단하게 관리하는 메모 앱."
+    },
+    "ja": {
+      "title": "かんたんメモ",
+      "description": "メモ、画像添付、通知、アプリロックを端末内でかんたんに管理できるメモアプリ。"
+    }
   }
 ]
