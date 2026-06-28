@@ -1,11 +1,10 @@
 import type { Locale } from "@/lib/i18n-messages";
 
 export const PRIVACY_SLUGS = [
-  "tapalarm",
+  "gandancam",
   "colorzcam",
   "kanji2136",
   "lunamirror",
-  "kandanmemo",
 ] as const;
 export type PrivacySlug = (typeof PRIVACY_SLUGS)[number];
 
@@ -768,6 +767,240 @@ const memoMiddleJa: PrivacySection[] = [
   },
 ];
 
+const gandanCamSectionsKo: PrivacySection[] = [
+  {
+    heading: "수집하는 정보",
+    body: `간단 카메라는 자체 서버를 운영하지 않으며, 사용자의 사진, 동영상, 음성, 위치 정보, 결제 정보를 개발자 서버로 전송하거나 저장하지 않습니다.
+
+앱 기능 제공을 위해 다음 권한을 사용할 수 있습니다.
+
+[카메라]
+사진 및 동영상 촬영 기능을 제공하기 위해 카메라 접근 권한을 사용합니다.
+
+[마이크]
+동영상 촬영 시 소리를 함께 녹음하기 위해 마이크 접근 권한을 사용합니다. 마이크로 녹음된 오디오는 사용자의 기기에 저장되는 동영상 파일에만 포함되며, 외부 서버로 전송되지 않습니다.
+
+[사진 보관함]
+촬영한 사진과 동영상을 사용자의 사진 앱에 저장하거나, 사용자가 선택한 사진을 앱에서 편집/필터 적용하기 위해 사진 보관함 접근 권한을 사용합니다.
+
+[모션 센서]
+수평 가이드 기능을 제공하기 위해 기기의 방향 및 움직임 정보를 사용합니다. 이 정보는 실시간 화면 표시 용도로만 사용되며 저장하거나 외부로 전송하지 않습니다.
+
+[위치 정보]
+사용자가 위치 권한을 허용한 경우, 촬영한 사진의 메타데이터에 위치 정보를 포함하기 위해 위치 정보를 사용할 수 있습니다. 위치 정보는 사용자의 기기 및 사진 파일 메타데이터에만 사용되며, 개발자 서버로 전송되지 않습니다.`,
+  },
+  {
+    heading: "앱 내 구입",
+    body: `간단 카메라는 PRO 기능 잠금 해제를 위한 앱 내 구입을 제공할 수 있습니다.
+
+앱 내 구입 결제 및 구매 기록 처리는 Apple App Store 및 StoreKit을 통해 이루어집니다. Watanid Studio는 사용자의 신용카드 번호, 결제 수단 정보, Apple ID 비밀번호를 수집하거나 접근할 수 없습니다.`,
+  },
+  {
+    heading: "사용하지 않는 정보",
+    body: `간단 카메라는 다음을 하지 않습니다.
+
+• 사용자 계정 생성
+• 광고 추적
+• 제3자 광고 SDK 사용
+• 분석 목적의 사용자 행동 추적
+• 사진, 동영상, 음성 파일의 서버 업로드
+• 개인정보의 판매 또는 공유
+• 다른 앱이나 웹사이트를 넘나드는 추적`,
+  },
+  {
+    heading: "데이터 보관",
+    body: `간단 카메라는 개발자 서버에 사용자의 개인정보를 저장하지 않습니다.
+
+앱에서 생성한 사진과 동영상은 사용자의 기기 또는 사용자의 사진 보관함에 저장됩니다. 사용자는 iOS 사진 앱 또는 기기 설정을 통해 해당 데이터를 삭제할 수 있습니다.`,
+  },
+  {
+    heading: "제3자 제공",
+    body: `간단 카메라는 사용자의 개인정보를 제3자에게 판매하거나 공유하지 않습니다.
+
+단, 앱 내 구입과 앱 배포 과정에서 Apple이 App Store 운영을 위해 결제 및 구매 관련 정보를 처리할 수 있습니다. 이 처리는 Apple의 개인정보처리방침을 따릅니다.
+
+Apple 개인정보처리방침:
+https://www.apple.com/legal/privacy/`,
+  },
+  {
+    heading: "어린이 개인정보",
+    body: `간단 카메라는 어린이를 대상으로 하지 않으며, 고의로 어린이의 개인정보를 수집하지 않습니다.`,
+  },
+  {
+    heading: "권한 변경 방법",
+    body: `사용자는 언제든지 iOS 설정 앱에서 간단 카메라의 권한을 변경할 수 있습니다.
+
+설정 > 간단 카메라 > 카메라 / 마이크 / 사진 / 위치 / 모션 권한`,
+  },
+  {
+    heading: "개인정보처리방침 변경",
+    body: `본 개인정보처리방침은 앱 기능 변경, 법령 또는 App Store 정책 변경에 따라 업데이트될 수 있습니다. 변경 시 본 페이지의 시행일을 갱신합니다.`,
+  },
+  {
+    heading: "문의",
+    body: `개인정보 관련 문의는 아래 연락처로 보내주세요.
+
+이메일: watanid26@gmail.com
+운영자: Watanid Studio`,
+  },
+];
+
+const gandanCamSectionsEn: PrivacySection[] = [
+  {
+    heading: "Information We Use",
+    body: `Gandan Cam does not operate its own server, and does not send or store your photos, videos, audio, location information, or payment information on a developer server.
+
+The app may use the following permissions to provide its features.
+
+[Camera]
+Camera access is used to provide photo and video capture features.
+
+[Microphone]
+Microphone access is used to record sound when capturing videos. Audio recorded through the microphone is included only in video files stored on your device and is not transmitted to external servers.
+
+[Photo Library]
+Photo library access is used to save captured photos and videos to your Photos app, or to edit/apply filters to photos you choose in the app.
+
+[Motion Sensors]
+Device orientation and motion information is used to provide the level guide feature. This information is used only for real-time display, and is not stored or transmitted externally.
+
+[Location]
+If you allow location permission, location information may be used to include location metadata in captured photos. Location information is used only on your device and in photo file metadata, and is not sent to a developer server.`,
+  },
+  {
+    heading: "In-App Purchases",
+    body: `Gandan Cam may offer in-app purchases to unlock PRO features.
+
+Payments and purchase records for in-app purchases are processed through the Apple App Store and StoreKit. Watanid Studio does not collect or access your credit card number, payment method details, or Apple ID password.`,
+  },
+  {
+    heading: "Information We Do Not Use",
+    body: `Gandan Cam does not:
+
+• create user accounts
+• perform advertising tracking
+• use third-party advertising SDKs
+• track user behavior for analytics
+• upload photos, videos, or audio files to a server
+• sell or share personal information
+• track users across other apps or websites`,
+  },
+  {
+    heading: "Data Retention",
+    body: `Gandan Cam does not store your personal information on a developer server.
+
+Photos and videos created in the app are stored on your device or in your photo library. You can delete this data through the iOS Photos app or device settings.`,
+  },
+  {
+    heading: "Third-Party Disclosure",
+    body: `Gandan Cam does not sell or share your personal information with third parties.
+
+However, Apple may process payment and purchase-related information to operate the App Store for in-app purchases and app distribution. This processing follows Apple's Privacy Policy.
+
+Apple Privacy Policy:
+https://www.apple.com/legal/privacy/`,
+  },
+  {
+    heading: "Children's Privacy",
+    body: `Gandan Cam is not directed to children, and we do not knowingly collect personal information from children.`,
+  },
+  {
+    heading: "How to Change Permissions",
+    body: `You can change Gandan Cam permissions at any time in the iOS Settings app.
+
+Settings > Gandan Cam > Camera / Microphone / Photos / Location / Motion permissions`,
+  },
+  {
+    heading: "Changes to This Privacy Policy",
+    body: `This Privacy Policy may be updated due to app feature changes, legal changes, or App Store policy changes. When changes are made, the effective date on this page will be updated.`,
+  },
+  {
+    heading: "Contact",
+    body: `For privacy-related questions, please contact us at:
+
+Email: watanid26@gmail.com
+Operator: Watanid Studio`,
+  },
+];
+
+const gandanCamSectionsJa: PrivacySection[] = [
+  {
+    heading: "使用する情報",
+    body: `かんたんカメラは独自のサーバーを運用しておらず、ユーザーの写真、動画、音声、位置情報、決済情報を開発者サーバーへ送信または保存しません。
+
+アプリの機能提供のため、次の権限を使用する場合があります。
+
+[カメラ]
+写真および動画の撮影機能を提供するために、カメラへのアクセス権限を使用します。
+
+[マイク]
+動画撮影時に音声を一緒に録音するために、マイクへのアクセス権限を使用します。マイクで録音された音声は、ユーザーの端末に保存される動画ファイルにのみ含まれ、外部サーバーへ送信されません。
+
+[写真ライブラリ]
+撮影した写真や動画をユーザーの写真アプリに保存するため、またはユーザーが選択した写真をアプリ内で編集・フィルター適用するために、写真ライブラリへのアクセス権限を使用します。
+
+[モーションセンサー]
+水平ガイド機能を提供するために、端末の向きや動きに関する情報を使用します。この情報はリアルタイム表示のためにのみ使用され、保存または外部へ送信されません。
+
+[位置情報]
+ユーザーが位置情報の権限を許可した場合、撮影した写真のメタデータに位置情報を含めるために使用することがあります。位置情報はユーザーの端末および写真ファイルのメタデータでのみ使用され、開発者サーバーへ送信されません。`,
+  },
+  {
+    heading: "アプリ内課金",
+    body: `かんたんカメラは、PRO機能のロック解除のためにアプリ内課金を提供する場合があります。
+
+アプリ内課金の決済および購入履歴の処理は、Apple App StoreおよびStoreKitを通じて行われます。Watanid Studioは、ユーザーのクレジットカード番号、決済手段情報、Apple IDのパスワードを収集またはアクセスできません。`,
+  },
+  {
+    heading: "使用しない情報",
+    body: `かんたんカメラは次のことを行いません。
+
+• ユーザーアカウントの作成
+• 広告トラッキング
+• 第三者広告SDKの使用
+• 分析目的でのユーザー行動の追跡
+• 写真、動画、音声ファイルのサーバーアップロード
+• 個人情報の販売または共有
+• 他のアプリやウェブサイトをまたぐ追跡`,
+  },
+  {
+    heading: "データの保管",
+    body: `かんたんカメラは、開発者サーバーにユーザーの個人情報を保存しません。
+
+アプリで作成された写真や動画は、ユーザーの端末または写真ライブラリに保存されます。ユーザーはiOSの写真アプリまたは端末設定から当該データを削除できます。`,
+  },
+  {
+    heading: "第三者提供",
+    body: `かんたんカメラは、ユーザーの個人情報を第三者に販売または共有しません。
+
+ただし、アプリ内課金およびアプリ配布の過程で、AppleがApp Storeの運営のために決済および購入に関する情報を処理する場合があります。この処理はAppleのプライバシーポリシーに従います。
+
+Apple プライバシーポリシー:
+https://www.apple.com/legal/privacy/`,
+  },
+  {
+    heading: "子どものプライバシー",
+    body: `かんたんカメラは子どもを対象としておらず、子どもの個人情報を意図的に収集しません。`,
+  },
+  {
+    heading: "権限の変更方法",
+    body: `ユーザーはいつでもiOS設定アプリで、かんたんカメラの権限を変更できます。
+
+設定 > かんたんカメラ > カメラ / マイク / 写真 / 位置情報 / モーション権限`,
+  },
+  {
+    heading: "プライバシーポリシーの変更",
+    body: `本プライバシーポリシーは、アプリ機能の変更、法令、またはApp Storeポリシーの変更により更新される場合があります。変更時には、本ページの施行日を更新します。`,
+  },
+  {
+    heading: "お問い合わせ",
+    body: `個人情報に関するお問い合わせは、下記までご連絡ください。
+
+メール: watanid26@gmail.com
+運営: Watanid Studio`,
+  },
+];
+
 function buildContent(
   locale: Locale,
   appName: string,
@@ -782,10 +1015,25 @@ function buildContent(
 }
 
 const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
-  tapalarm: {
-    en: buildContent("en", "TapAlarm", tapS1En, tapS2En),
-    ko: buildContent("ko", "탭알람", tapS1Ko, tapS2Ko),
-    ja: buildContent("ja", "タップアラーム", tapS1Ja, tapS2Ja),
+  gandancam: {
+    en: {
+      appName: "Gandan Cam",
+      labels: LABELS["en"],
+      effectiveDate: "2026-06-28",
+      sections: gandanCamSectionsEn,
+    },
+    ko: {
+      appName: "간단 카메라",
+      labels: LABELS["ko"],
+      effectiveDate: "2026-06-28",
+      sections: gandanCamSectionsKo,
+    },
+    ja: {
+      appName: "かんたんカメラ",
+      labels: LABELS["ja"],
+      effectiveDate: "2026-06-28",
+      sections: gandanCamSectionsJa,
+    },
   },
   colorzcam: {
     en: buildContent("en", "ColorzCam", camS1En, camS2En),
@@ -827,26 +1075,6 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
       labels: LABELS["ja"],
       effectiveDate: "2026-05-25",
       sections: [lunaS1Ja, lunaS2Ja, ...lunaMiddleJa, s8Ja],
-    },
-  },
-  kandanmemo: {
-    en: {
-      appName: "KandanMemo",
-      labels: LABELS["en"],
-      effectiveDate: "2026-06-09",
-      sections: [memoS1En, memoS2En, ...memoMiddleEn, s8En],
-    },
-    ko: {
-      appName: "간단메모",
-      labels: LABELS["ko"],
-      effectiveDate: "2026-06-09",
-      sections: [memoS1Ko, memoS2Ko, ...memoMiddleKo, s8Ko],
-    },
-    ja: {
-      appName: "かんたんメモ",
-      labels: LABELS["ja"],
-      effectiveDate: "2026-06-09",
-      sections: [memoS1Ja, memoS2Ja, ...memoMiddleJa, s8Ja],
     },
   },
 };

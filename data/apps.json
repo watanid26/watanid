@@ -22,25 +22,25 @@
     }
   },
   {
-    "slug": "tapalarm",
-    "thumbnail": "/images/logo2.png",
+    "slug": "gandancam",
+    "thumbnail": "/logo/botong_camera_icon_1024.png",
     "link": "#",
     "status": "published",
-    "order": 3,
-    "featured": true,
+    "order": -1,
+    "featured": false,
     "playStoreUrl": "",
-    "appStoreUrl": "https://apps.apple.com/us/app/kanji-2136-japanese-kanji/id6762960703",
+    "appStoreUrl": "",
     "en": {
-      "title": "TapAlarm",
-      "description": "Wake up for sure, with simple and gentle taps."
+      "title": "Gandan Cam",
+      "description": "A simple camera app for taking photos and videos with guides, filters, and on-device saving."
     },
     "ko": {
-      "title": "탭알람",
-      "description": "불쾌함 없이, 확실하게 깨우는 탭 기반 알람."
+      "title": "간단 카메라",
+      "description": "사진과 동영상을 간단하게 촬영하고, 가이드와 필터를 기기 안에서 바로 활용하는 카메라 앱."
     },
     "ja": {
-      "title": "タップアラーム",
-      "description": "不快感なく、タップ操作で確実に目覚めるアラーム。"
+      "title": "かんたんカメラ",
+      "description": "写真や動画をかんたんに撮影し、ガイドやフィルターを端末上で使えるカメラアプリ。"
     }
   },
   {
@@ -85,28 +85,6 @@
     "ja": {
       "title": "漢字 2136",
       "description": "常用漢字2,136字の習得、あなたの一番身近な学習パートナーと一緒に。"
-    }
-  },
-  {
-    "slug": "kandanmemo",
-    "thumbnail": "/images/yellownote_icon_yellow_1024.png",
-    "link": "#",
-    "status": "published",
-    "order": -1,
-    "featured": false,
-    "playStoreUrl": "",
-    "appStoreUrl": "",
-    "en": {
-      "title": "KandanMemo",
-      "description": "A simple memo app for notes, images, reminders, and private app lock on your device."
-    },
-    "ko": {
-      "title": "간단메모",
-      "description": "메모, 이미지 첨부, 알림, 앱 잠금을 기기 안에서 간단하게 관리하는 메모 앱."
-    },
-    "ja": {
-      "title": "かんたんメモ",
-      "description": "メモ、画像添付、通知、アプリロックを端末内でかんたんに管理できるメモアプリ。"
     }
   }
 ]
