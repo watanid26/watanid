@@ -1065,7 +1065,7 @@ Google 개인정보처리방침: https://policies.google.com/privacy
     heading: "문의",
     body: `개인정보 관련 문의사항이 있으시면 아래로 연락해 주세요.
 
-이메일: jindh0310@gmail.com`,
+이메일: watanid26@gmail.com`,
   },
 ];
 
@@ -1132,7 +1132,7 @@ You can decline notification permission; memo creation and widget features will 
     heading: "Contact",
     body: `For any privacy-related questions, please contact:
 
-Email: jindh0310@gmail.com`,
+Email: watanid26@gmail.com`,
   },
 ];
 
@@ -1199,7 +1199,7 @@ Googleプライバシーポリシー:https://policies.google.com/privacy
     heading: "お問い合わせ",
     body: `本ポリシーに関するお問い合わせは、下記までご連絡ください。
 
-Email: jindh0310@gmail.com`,
+Email: watanid26@gmail.com`,
   },
 ];
 
