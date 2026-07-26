@@ -1,5 +1,27 @@
 [
   {
+    "slug": "glancememo",
+    "thumbnail": "/images/icon_v2_master_1024.png",
+    "link": "#",
+    "status": "published",
+    "order": -2,
+    "featured": false,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "GlanceMemo",
+      "description": "A quick memo app that keeps notes, reminders, and settings on your iPhone only."
+    },
+    "ko": {
+      "title": "잠금메모",
+      "description": "메모와 리마인더를 빠르게 남기고, 모든 내용을 iPhone 안에만 저장하는 간단한 메모 앱."
+    },
+    "ja": {
+      "title": "ぱっと見メモ",
+      "description": "メモやリマインダーをすばやく残し、内容をiPhone内だけに保存するシンプルなメモアプリ。"
+    }
+  },
+  {
     "slug": "lunamirror",
     "thumbnail": "/images/luna-mirror.png",
     "link": "#",

@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n-messages";
 
 export const PRIVACY_SLUGS = [
+  "glancememo",
   "gandancam",
   "colorzcam",
   "kanji2136",
@@ -1001,6 +1002,207 @@ https://www.apple.com/legal/privacy/`,
   },
 ];
 
+const glanceMemoSectionsKo: PrivacySection[] = [
+  {
+    heading: "수집하는 정보",
+    body: `앱이 수집하지 않는 것
+• 이름, 이메일, 전화번호 등 개인 식별 정보
+• 계정 정보 (앱은 회원가입이 없습니다)
+• 위치 정보
+• 연락처, 사진, 파일 접근
+
+이용자가 앱에 입력하는 정보 (기기에만 저장)
+• 메모 내용
+• 알림 설정 시각
+• 앱 설정 (테마, 언어 등)
+
+이 정보는 이용자의 iPhone 내부(로컬 데이터베이스)에만 저장되며, 외부 서버로 전송되지 않습니다. 앱을 삭제하면 모든 데이터가 함께 삭제됩니다.
+
+자동으로 수집되는 정보 (광고 관련)
+Google AdMob을 통해 광고를 표시하며, Google이 다음 정보를 수집할 수 있습니다:
+• 광고 식별자 (IDFA) — 이용자가 App Tracking Transparency(ATT) 요청에서 "허용"을 선택한 경우에만
+• 기기 정보 (기기 종류, iOS 버전, 언어 설정 등)
+• 광고 노출 및 클릭 데이터
+
+이용자가 ATT 요청에서 "허용 안 함"을 선택하면 개인화 광고는 표시되지 않습니다. 이 경우에도 앱은 정상 동작합니다.`,
+  },
+  {
+    heading: "정보 이용 목적",
+    body: `• 메모 · 알림 기능 제공 (기기 내부)
+• 앱 무료 운영을 위한 광고 표시 (Google AdMob)
+• 앱 안정성 및 서비스 개선`,
+  },
+  {
+    heading: "제3자 제공 · 위탁",
+    body: `Google AdMob (광고)
+광고 서비스 제공을 위해 Google에 광고 관련 정보가 전송됩니다.
+Google 개인정보처리방침: https://policies.google.com/privacy
+
+앱은 그 외 어떠한 제3자에게도 이용자 정보를 제공하지 않습니다.`,
+  },
+  {
+    heading: "알림 권한",
+    body: `앱이 알림 권한을 요청하는 이유:
+• 이용자가 메모에 설정한 리마인더 시각에 알림을 표시하기 위함
+• 저녁/아침 메모 유도 알림 (선택 기능, 설정에서 끌 수 있음)
+
+권한을 거부해도 메모 작성 · 위젯 기능은 정상 동작합니다.`,
+  },
+  {
+    heading: "데이터 삭제",
+    body: `• 앱 삭제 시: 모든 메모 · 설정이 자동으로 함께 삭제됩니다
+• 앱 내 삭제: 설정 → 데이터 관리에서 개별 메모 또는 전체 데이터 삭제 가능`,
+  },
+  {
+    heading: "아동 개인정보 보호",
+    body: `앱은 만 13세 미만 아동을 대상으로 하지 않으며, 아동으로부터 의도적으로 개인정보를 수집하지 않습니다.`,
+  },
+  {
+    heading: "변경 사항",
+    body: `본 방침이 변경될 경우 앱 설정 화면 및 App Store 페이지를 통해 안내드립니다.`,
+  },
+  {
+    heading: "문의",
+    body: `개인정보 관련 문의사항이 있으시면 아래로 연락해 주세요.
+
+이메일: jindh0310@gmail.com`,
+  },
+];
+
+const glanceMemoSectionsEn: PrivacySection[] = [
+  {
+    heading: "Information We Collect",
+    body: `What we DO NOT collect
+• Personal identifiers such as name, email, or phone number
+• Account information (the App has no sign-up)
+• Location data
+• Access to contacts, photos, or files
+
+Information you enter into the App (stored on your device only)
+• Memo content
+• Reminder times you set
+• App settings (theme, language, etc.)
+
+This information is stored only in your iPhone's local database and is never transmitted to any external server. Deleting the App removes all data.
+
+Automatically Collected Information (Advertising)
+The App displays ads via Google AdMob, which may collect:
+• Advertising Identifier (IDFA) — only if you select "Allow" in the App Tracking Transparency (ATT) prompt
+• Device information (device model, iOS version, language settings)
+• Ad impression and click data
+
+If you select "Don't Allow" in the ATT prompt, personalized ads will not be shown. The App works normally either way.`,
+  },
+  {
+    heading: "How Information is Used",
+    body: `• To provide memo and reminder functionality (on-device)
+• To display ads that support the App's free operation (Google AdMob)
+• To improve stability and service quality`,
+  },
+  {
+    heading: "Third Parties",
+    body: `Google AdMob (Advertising)
+Advertising-related information is transmitted to Google to serve ads.
+Google Privacy Policy: https://policies.google.com/privacy
+
+The App does not share your information with any other third party.`,
+  },
+  {
+    heading: "Notification Permission",
+    body: `The App requests notification permission for:
+• Displaying reminders at the times you set for your memos
+• Optional evening/morning memo prompts (can be turned off in Settings)
+
+You can decline notification permission; memo creation and widget features will continue to work.`,
+  },
+  {
+    heading: "Data Deletion",
+    body: `• On App deletion: all memos and settings are automatically removed
+• Within the App: individual memos or all data can be deleted via Settings → Data Management`,
+  },
+  {
+    heading: "Children's Privacy",
+    body: `The App is not directed to children under 13 and does not knowingly collect personal information from them.`,
+  },
+  {
+    heading: "Changes",
+    body: `Any changes to this policy will be posted within the App's Settings screen and on the App Store page.`,
+  },
+  {
+    heading: "Contact",
+    body: `For any privacy-related questions, please contact:
+
+Email: jindh0310@gmail.com`,
+  },
+];
+
+const glanceMemoSectionsJa: PrivacySection[] = [
+  {
+    heading: "収集する情報",
+    body: `本アプリが収集しない情報
+• 氏名、メールアドレス、電話番号などの個人識別情報
+• アカウント情報(本アプリに会員登録はありません)
+• 位置情報
+• 連絡先、写真、ファイルへのアクセス
+
+ユーザーが本アプリに入力する情報(端末内のみに保存)
+• メモの内容
+• 通知設定時刻
+• アプリ設定(テーマ、言語など)
+
+これらの情報はユーザーのiPhone内部(ローカルデータベース)にのみ保存され、外部サーバーに送信されません。本アプリを削除するとすべてのデータも削除されます。
+
+自動的に収集される情報(広告関連)
+Google AdMobを通じて広告を表示しており、Googleが以下の情報を収集する場合があります:
+• 広告識別子(IDFA)— ユーザーがApp Tracking Transparency(ATT)要求で「許可」を選択した場合のみ
+• 端末情報(端末の種類、iOSバージョン、言語設定など)
+• 広告表示およびクリックデータ
+
+ATT要求で「許可しない」を選択した場合、パーソナライズ広告は表示されません。この場合も本アプリは正常に動作します。`,
+  },
+  {
+    heading: "情報の利用目的",
+    body: `• メモ・通知機能の提供(端末内)
+• 本アプリを無料で運営するための広告表示(Google AdMob)
+• アプリの安定性およびサービスの改善`,
+  },
+  {
+    heading: "第三者提供",
+    body: `Google AdMob(広告)
+広告サービスの提供のため、広告関連情報がGoogleに送信されます。
+Googleプライバシーポリシー:https://policies.google.com/privacy
+
+本アプリはその他いかなる第三者にもユーザー情報を提供しません。`,
+  },
+  {
+    heading: "通知権限",
+    body: `本アプリが通知権限を要求する理由:
+• ユーザーがメモに設定したリマインダーの時刻に通知を表示するため
+• 夕方・朝のメモ促し通知(オプション機能、設定でオフに可能)
+
+権限を拒否してもメモ作成・ウィジェット機能は正常に動作します。`,
+  },
+  {
+    heading: "データ削除",
+    body: `• 本アプリの削除時: すべてのメモ・設定が自動的に削除されます
+• 本アプリ内での削除: 設定 → データ管理から個別メモまたは全データを削除できます`,
+  },
+  {
+    heading: "児童のプライバシー",
+    body: `本アプリは13歳未満の児童を対象としておらず、児童から意図的に個人情報を収集しません。`,
+  },
+  {
+    heading: "変更",
+    body: `本ポリシーに変更がある場合は、本アプリの設定画面およびApp Storeページでお知らせします。`,
+  },
+  {
+    heading: "お問い合わせ",
+    body: `本ポリシーに関するお問い合わせは、下記までご連絡ください。
+
+Email: jindh0310@gmail.com`,
+  },
+];
+
 function buildContent(
   locale: Locale,
   appName: string,
@@ -1015,6 +1217,26 @@ function buildContent(
 }
 
 const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
+  glancememo: {
+    en: {
+      appName: "GlanceMemo",
+      labels: LABELS["en"],
+      effectiveDate: "2026-08-01",
+      sections: glanceMemoSectionsEn,
+    },
+    ko: {
+      appName: "잠금메모",
+      labels: LABELS["ko"],
+      effectiveDate: "2026-08-01",
+      sections: glanceMemoSectionsKo,
+    },
+    ja: {
+      appName: "ぱっと見メモ",
+      labels: LABELS["ja"],
+      effectiveDate: "2026-08-01",
+      sections: glanceMemoSectionsJa,
+    },
+  },
   gandancam: {
     en: {
       appName: "Gandan Cam",
