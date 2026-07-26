@@ -44,28 +44,6 @@
     }
   },
   {
-    "slug": "gandancam",
-    "thumbnail": "/logo/botong_camera_icon_1024.png",
-    "link": "#",
-    "status": "published",
-    "order": -1,
-    "featured": false,
-    "playStoreUrl": "",
-    "appStoreUrl": "",
-    "en": {
-      "title": "Gandan Cam",
-      "description": "A simple camera app for taking photos and videos with guides, filters, and on-device saving."
-    },
-    "ko": {
-      "title": "간단 카메라",
-      "description": "사진과 동영상을 간단하게 촬영하고, 가이드와 필터를 기기 안에서 바로 활용하는 카메라 앱."
-    },
-    "ja": {
-      "title": "かんたんカメラ",
-      "description": "写真や動画をかんたんに撮影し、ガイドやフィルターを端末上で使えるカメラアプリ。"
-    }
-  },
-  {
     "slug": "colorzcam",
     "thumbnail": "/images/Colorz.png",
     "link": "#",
