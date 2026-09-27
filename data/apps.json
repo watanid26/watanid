@@ -1,5 +1,27 @@
 [
   {
+    "slug": "glassframe",
+    "thumbnail": "/images/glassframe.png",
+    "link": "#",
+    "status": "published",
+    "order": -3,
+    "featured": false,
+    "playStoreUrl": "",
+    "appStoreUrl": "",
+    "en": {
+      "title": "Glassframe",
+      "description": "Float any Chrome video over your Mac — a glass overlay that stays on top while you work."
+    },
+    "ko": {
+      "title": "Glassframe",
+      "description": "Chrome의 어떤 영상이든 Mac 화면 위에 띄워두는, 작업 중에도 사라지지 않는 글래스 오버레이."
+    },
+    "ja": {
+      "title": "Glassframe",
+      "description": "Chromeのどんな動画もMacの画面上に浮かべる、作業中も消えないグラスオーバーレイ。"
+    }
+  },
+  {
     "slug": "glancememo",
     "thumbnail": "/images/icon_v2_master_1024.png",
     "link": "#",
