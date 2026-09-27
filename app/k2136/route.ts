@@ -14,7 +14,12 @@ export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 const APP_NAME = "Kanji 2136";
-const APP_TAGLINE = "Learn all 2,136 Jōyō kanji — readings, meanings, and stroke order.";
+const APP_TAGLINE =
+  "Learn all 2,136 Jōyō kanji — tap a kanji to explore words, example sentences, and connected kanji.";
+
+const OG_IMAGE_PATH = "/og/k2136.png";
+const OG_IMAGE_WIDTH = "1200";
+const OG_IMAGE_HEIGHT = "630";
 
 const ANDROID_PACKAGE = "com.kanji2136.app";
 const APP_STORE_ID = "6762960703";
@@ -47,18 +52,19 @@ function escapeHtml(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
-/** Absolute URL of this request, preferring the proxy headers Vercel sets. */
-function canonicalUrl(request: NextRequest, campaign: string): string {
+/** Absolute origin of this request, preferring the proxy headers Vercel sets. */
+function originOf(request: NextRequest): string {
   const host = request.headers.get("x-forwarded-host") ?? request.headers.get("host");
   const proto = request.headers.get("x-forwarded-proto") ?? "https";
-  const base = host ? `${proto}://${host}` : new URL(request.url).origin;
-  return `${base}/k2136?c=${campaign}`;
+  return host ? `${proto}://${host}` : new URL(request.url).origin;
 }
 
-function landingPage(campaign: string, url: string): string {
+function landingPage(campaign: string, origin: string): string {
   const play = escapeHtml(playUrl(campaign));
   const app = escapeHtml(appStoreUrl(campaign));
-  const ogUrl = escapeHtml(url);
+  const ogUrl = escapeHtml(`${origin}/k2136?c=${campaign}`);
+  // og:image must be absolute — Meta will not resolve a relative path.
+  const ogImage = escapeHtml(`${origin}${OG_IMAGE_PATH}`);
 
   return `<!doctype html>
 <html lang="en">
@@ -72,6 +78,12 @@ function landingPage(campaign: string, url: string): string {
 <meta property="og:title" content="${APP_NAME}">
 <meta property="og:description" content="${APP_TAGLINE}">
 <meta property="og:url" content="${ogUrl}">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:image:width" content="${OG_IMAGE_WIDTH}">
+<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="${APP_NAME}">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   body {
@@ -157,7 +169,7 @@ export async function GET(request: NextRequest) {
     });
   }
 
-  return new Response(landingPage(campaign, canonicalUrl(request, campaign)), {
+  return new Response(landingPage(campaign, originOf(request)), {
     status: 200,
     headers: { ...BASE_HEADERS, "Content-Type": "text/html; charset=utf-8" },
   });
