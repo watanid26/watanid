@@ -1219,87 +1219,48 @@ function buildContent(
 
 /**
  * Glassframe — macOS app + "Glassframe Connector" Chrome extension.
- * Unlike the mobile apps above it has no ads and no SDKs, so it does not reuse
- * the shared AdMob middle sections; every section here is app-specific.
+ * No ads and no SDKs, so it does not reuse the shared AdMob middle sections.
+ * Mirrors store/privacy-policy.html as of the 1.1.2 release.
  */
 const glassframeSectionsEn: PrivacySection[] = [
   {
     heading: "Summary",
-    body: `This policy covers Glassframe, the macOS app, and Glassframe Connector, its companion Chrome extension (together, "Glassframe"). Both are made by Watanid.
+    body: `This policy applies to the Glassframe Mac app and the Glassframe Connector Chrome extension.
 
-• We do not collect, store or sell any personal data.
-• Video from the Chrome tab you choose goes only to the Glassframe app on the same Mac, over 127.0.0.1. It never leaves your computer.
-• There are no accounts, no analytics, no ads and no Watanid servers involved.
-• Audio is not captured.`,
+Glassframe does not collect, store, sell or share any personal data. Video never leaves your Mac. There are no accounts, analytics, trackers, ads or servers.`,
   },
   {
-    heading: "What the Extension Handles, and Where It Goes",
-    body: `Glassframe Connector does nothing until you start it on a tab, using the toolbar button, the right-click menu ("Show this video in Glassframe") or the keyboard shortcut. After that, it handles the following, only on your Mac.
+    heading: "The Mac App",
+    body: `Glassframe shows a video on your screen as a see-through overlay. Frames are shown and discarded; they are never recorded, saved or uploaded. Audio is not captured.
 
-[Video frames from the tab you chose]
-Used to show the video in the Glassframe overlay. Encoded on your Mac and sent only to the Glassframe app at 127.0.0.1.
+[Screen Recording permission]
+Used only when you choose "Show a Video App…" to show another app's window. Only the window you pick is captured, and only while it is shown.
 
-[Position of the video on that page]
-Used to crop to just the video, following scrolling and theater mode. Used inside the extension and the local app only.
+[Accessibility permission]
+Optional. Used only if you use Glassframe's play/pause and skip shortcuts with QuickTime Player, IINA, VLC or mpv: Glassframe then sends that app its own playback keys, or moves QuickTime Player's timeline. Glassframe does not read, log or record what you type.
 
-[Whether the shared tab is in front, its title, and whether it was closed]
-Used so the overlay can step aside and stop correctly. Used inside the extension and the local app only.
+[Local connection]
+Glassframe communicates only with its Chrome extension on the same Mac, over 127.0.0.1. It makes no internet connections. Links such as the Chrome Web Store page open in your browser only when you click them.
 
-[Which tab is being shared]
-Used to keep sharing working if Chrome restarts the extension's background worker. Stored in Chrome session storage, and cleared when the browser session ends.
-
-[Play, pause and seek commands]
-Used so you can control the video from Glassframe. Sent from the local app to the chosen tab only.
-
-The extension does not read your browsing history, cookies, passwords, form data or the contents of other tabs. It uses your existing Chrome session as-is, so it never sees or stores your sign-in details for any website.`,
+[Settings]
+Your settings — visibility, shortcuts, overlay position, the name and title of the last window you chose, and the video area you drew for each app — are stored on your Mac in the app's preferences.`,
   },
   {
-    heading: "What We Do Not Do",
-    body: `Glassframe does not:
+    heading: "The Chrome Extension",
+    body: `When you choose "Show this video in Glassframe" (toolbar button, right-click menu or keyboard shortcut), the extension captures that one tab's picture with Chrome's tab capture.
 
-• send any data to Watanid or to any third party
-• use analytics, crash reporting, tracking or advertising SDKs
-• create user accounts or require sign-in
-• load remote code — all of the extension's code ships inside the extension package
-• sell or transfer user data, use it for purposes unrelated to Glassframe's single purpose, or use it to determine creditworthiness or for lending`,
+• It finds where the video is on the page so only the video is sent, compresses it, and sends it to the Glassframe app on the same Mac over a local connection (127.0.0.1). Nothing is sent over the internet.
+• It can play, pause or skip the video in that tab when you use Glassframe's playback controls.
+• While Chrome is running, it checks in with the Glassframe app on 127.0.0.1 every 20 seconds so the app can show that Chrome is connected. The check-in contains only the extension's version number. Its setup page uses the same local connection to show whether the app is running.
+• Audio is not captured. Frames are not recorded or saved.`,
   },
   {
-    heading: "Chrome Permissions",
-    body: `[tabCapture]
-Captures only the tab you explicitly chose, so its video can be shown in the local Glassframe app.
-
-[offscreen]
-Tab capture and video encoding (WebCodecs) run in an offscreen document, because the extension's service worker cannot use media streams.
-
-[activeTab]
-The extension acts only on the tab where you invoked it.
-
-[scripting]
-Injects a small script into the chosen tab to find where the video is, and to play, pause or seek it when you use those buttons in Glassframe.
-
-[tabs]
-Detects when the shared tab is in front, changes title or is closed.
-
-[storage]
-Remembers which tab is being shared, in session storage only.
-
-[contextMenus]
-Adds the "Show this video in Glassframe" and "Stop Glassframe" menu items.`,
+    heading: "Data Stored by the Extension",
+    body: `Only the ID of the tab currently being shown, and whether its setup page was already shown for that tab. Both are kept in Chrome's session storage, which is cleared when Chrome closes.`,
   },
   {
-    heading: "Chrome Web Store User Data Policy",
-    body: `The use of information received from Chrome APIs by Glassframe Connector adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.
-
-Chrome Web Store User Data Policy:
-https://developer.chrome.com/docs/webstore/program-policies/policies`,
-  },
-  {
-    heading: "Children's Privacy",
-    body: `Glassframe does not knowingly collect any information from anyone, including children.`,
-  },
-  {
-    heading: "Changes to This Privacy Policy",
-    body: `If this policy changes, we will update this page and the effective date above. If Glassframe ever starts handling data in a new way, we will say so here before that version is released.`,
+    heading: "Third Parties",
+    body: `No data is shared with anyone.`,
   },
   {
     heading: "Contact",
@@ -1313,81 +1274,42 @@ Operator: Watanid`,
 const glassframeSectionsKo: PrivacySection[] = [
   {
     heading: "요약",
-    body: `본 방침은 macOS 앱 Glassframe과, 함께 사용하는 Chrome 확장 프로그램 Glassframe Connector(이하 통칭 "Glassframe")에 적용됩니다. 두 제품 모두 Watanid가 만들었습니다.
+    body: `본 방침은 macOS 앱 Glassframe과 Chrome 확장 프로그램 Glassframe Connector에 적용됩니다.
 
-• 어떠한 개인정보도 수집·저장·판매하지 않습니다.
-• 사용자가 선택한 Chrome 탭의 영상은 127.0.0.1을 통해 같은 Mac 안의 Glassframe 앱으로만 전달됩니다. 컴퓨터 밖으로 나가지 않습니다.
-• 계정, 분석 도구, 광고, Watanid 서버가 일절 관여하지 않습니다.
-• 소리는 캡처하지 않습니다.`,
+Glassframe은 어떠한 개인정보도 수집·저장·판매·공유하지 않습니다. 영상은 사용자의 Mac을 벗어나지 않습니다. 계정, 분석 도구, 트래커, 광고, 서버가 일절 없습니다.`,
   },
   {
-    heading: "확장 프로그램이 다루는 정보와 전달 범위",
-    body: `Glassframe Connector는 사용자가 툴바 버튼, 마우스 오른쪽 클릭 메뉴("이 영상을 Glassframe으로 보기"), 또는 단축키로 특정 탭에서 실행하기 전까지 아무 동작도 하지 않습니다. 실행 이후에는 아래 정보를 오직 사용자의 Mac 안에서만 처리합니다.
+    heading: "Mac 앱",
+    body: `Glassframe은 영상을 화면 위에 반투명 오버레이로 표시합니다. 프레임은 표시된 뒤 폐기되며, 녹화·저장·업로드되지 않습니다. 소리는 캡처하지 않습니다.
 
-[선택한 탭의 영상 프레임]
-Glassframe 오버레이에 영상을 표시하기 위해 사용합니다. 사용자의 Mac에서 인코딩되어 127.0.0.1의 Glassframe 앱으로만 전송됩니다.
+[화면 기록 권한]
+"영상 앱 표시…"를 선택해 다른 앱의 창을 표시할 때만 사용됩니다. 사용자가 선택한 창만, 표시되는 동안에만 캡처합니다.
 
-[해당 페이지 내 영상의 위치]
-스크롤과 극장 모드를 따라가며 영상 영역만 잘라내기 위해 사용합니다. 확장 프로그램과 로컬 앱 내부에서만 사용됩니다.
+[손쉬운 사용 권한]
+선택 사항입니다. QuickTime Player, IINA, VLC, mpv에서 Glassframe의 재생/일시정지 및 건너뛰기 단축키를 사용할 때만 쓰입니다. 이때 Glassframe은 해당 앱에 그 앱 자체의 재생 키를 전달하거나, QuickTime Player의 타임라인을 이동시킵니다. Glassframe은 사용자가 입력하는 내용을 읽거나 기록하지 않습니다.
 
-[공유 중인 탭의 활성화 여부, 제목, 닫힘 여부]
-오버레이가 적절히 비켜나고 정상적으로 종료되도록 하기 위해 사용합니다. 확장 프로그램과 로컬 앱 내부에서만 사용됩니다.
+[로컬 연결]
+Glassframe은 같은 Mac 안의 Chrome 확장 프로그램과 127.0.0.1을 통해서만 통신합니다. 인터넷 연결은 하지 않습니다. Chrome 웹 스토어 페이지와 같은 링크는 사용자가 클릭할 때만 브라우저에서 열립니다.
 
-[공유 중인 탭 식별 정보]
-Chrome이 확장 프로그램의 백그라운드 워커를 재시작하더라도 공유가 유지되도록 하기 위해 사용합니다. Chrome 세션 저장소에 보관되며, 브라우저 세션이 끝나면 삭제됩니다.
-
-[재생·일시정지·탐색 명령]
-Glassframe에서 영상을 제어할 수 있도록 하기 위해 사용합니다. 로컬 앱에서 선택한 탭으로만 전달됩니다.
-
-확장 프로그램은 사용자의 방문 기록, 쿠키, 비밀번호, 입력 양식 데이터, 다른 탭의 내용을 읽지 않습니다. 기존 Chrome 세션을 그대로 사용하므로 어떤 웹사이트의 로그인 정보도 확인하거나 저장하지 않습니다.`,
+[설정]
+사용자의 설정(표시 여부, 단축키, 오버레이 위치, 마지막으로 선택한 창의 이름과 제목, 앱별로 지정한 영상 영역)은 사용자의 Mac 안 앱 환경설정에 저장됩니다.`,
   },
   {
-    heading: "하지 않는 일",
-    body: `Glassframe은 다음을 하지 않습니다.
+    heading: "Chrome 확장 프로그램",
+    body: `"이 영상을 Glassframe으로 보기"(툴바 버튼, 마우스 오른쪽 클릭 메뉴, 단축키)를 선택하면, 확장 프로그램이 Chrome의 탭 캡처 기능으로 해당 탭 하나의 화면을 캡처합니다.
 
-• Watanid 또는 제3자에게 데이터를 전송하는 행위
-• 분석 도구, 크래시 리포팅, 트래킹, 광고 SDK 사용
-• 사용자 계정 생성 및 로그인 요구
-• 원격 코드 로드 — 확장 프로그램의 모든 코드는 패키지 안에 포함되어 배포됩니다
-• 사용자 데이터를 판매·양도하거나, Glassframe 본래의 목적과 무관한 용도로 사용하거나, 신용도 판정 및 대출 목적으로 사용하는 행위`,
+• 페이지에서 영상의 위치를 찾아 영상 부분만 전송되도록 한 뒤, 압축하여 같은 Mac의 Glassframe 앱으로 로컬 연결(127.0.0.1)을 통해 보냅니다. 인터넷으로는 아무것도 전송되지 않습니다.
+• Glassframe의 재생 컨트롤을 사용하면 해당 탭의 영상을 재생·일시정지·건너뛰기할 수 있습니다.
+• Chrome이 실행 중인 동안, 앱이 Chrome의 연결 상태를 표시할 수 있도록 20초마다 127.0.0.1의 Glassframe 앱에 연결 확인을 보냅니다. 이 확인에는 확장 프로그램의 버전 번호만 포함됩니다. 설정 페이지도 같은 로컬 연결을 사용해 앱의 실행 여부를 표시합니다.
+• 소리는 캡처하지 않습니다. 프레임은 녹화되거나 저장되지 않습니다.`,
   },
   {
-    heading: "Chrome 권한",
-    body: `[tabCapture]
-사용자가 명시적으로 선택한 탭만 캡처하여, 해당 영상을 로컬 Glassframe 앱에 표시합니다.
-
-[offscreen]
-확장 프로그램의 서비스 워커는 미디어 스트림을 사용할 수 없으므로, 탭 캡처와 영상 인코딩(WebCodecs)을 오프스크린 문서에서 실행합니다.
-
-[activeTab]
-사용자가 실행한 탭에 대해서만 동작합니다.
-
-[scripting]
-선택한 탭에 작은 스크립트를 삽입하여 영상의 위치를 찾고, Glassframe의 버튼으로 재생·일시정지·탐색을 수행합니다.
-
-[tabs]
-공유 중인 탭이 활성화되었는지, 제목이 바뀌었는지, 닫혔는지를 감지합니다.
-
-[storage]
-공유 중인 탭 정보를 세션 저장소에만 기억합니다.
-
-[contextMenus]
-"이 영상을 Glassframe으로 보기" 및 "Glassframe 중지" 메뉴 항목을 추가합니다.`,
+    heading: "확장 프로그램이 저장하는 데이터",
+    body: `현재 표시 중인 탭의 ID와, 해당 탭에 설정 페이지를 이미 띄웠는지 여부만 저장합니다. 두 가지 모두 Chrome의 세션 저장소에 보관되며, Chrome이 종료되면 삭제됩니다.`,
   },
   {
-    heading: "Chrome 웹 스토어 사용자 데이터 정책",
-    body: `Glassframe Connector가 Chrome API로부터 받은 정보의 사용은, 제한적 사용(Limited Use) 요건을 포함한 Chrome 웹 스토어 사용자 데이터 정책을 준수합니다.
-
-Chrome 웹 스토어 사용자 데이터 정책:
-https://developer.chrome.com/docs/webstore/program-policies/policies`,
-  },
-  {
-    heading: "아동의 개인정보",
-    body: `Glassframe은 아동을 포함한 누구로부터도 어떠한 정보도 고의로 수집하지 않습니다.`,
-  },
-  {
-    heading: "방침 변경",
-    body: `본 방침이 변경되면 이 페이지와 위의 시행일을 갱신합니다. Glassframe이 데이터를 새로운 방식으로 다루게 되는 경우, 해당 버전이 배포되기 전에 이 페이지에 먼저 안내합니다.`,
+    heading: "제3자 제공",
+    body: `어떠한 데이터도 누구에게도 공유되지 않습니다.`,
   },
   {
     heading: "문의",
@@ -1401,81 +1323,42 @@ https://developer.chrome.com/docs/webstore/program-policies/policies`,
 const glassframeSectionsJa: PrivacySection[] = [
   {
     heading: "概要",
-    body: `本ポリシーは、macOSアプリ「Glassframe」と、その連携Chrome拡張機能「Glassframe Connector」（以下、総称して「Glassframe」）に適用されます。いずれもWatanidが開発しています。
+    body: `本ポリシーは、macOSアプリ「Glassframe」およびChrome拡張機能「Glassframe Connector」に適用されます。
 
-• 個人データの収集・保存・販売は一切行いません。
-• 選択したChromeタブの映像は、127.0.0.1を経由して同じMac内のGlassframeアプリにのみ送られます。お使いのコンピュータの外に出ることはありません。
-• アカウント、解析ツール、広告、Watanidのサーバーは一切関与しません。
-• 音声は取得しません。`,
+Glassframeは、いかなる個人データも収集・保存・販売・共有しません。映像がお使いのMacの外に出ることはありません。アカウント、解析ツール、トラッカー、広告、サーバーは一切ありません。`,
   },
   {
-    heading: "拡張機能が扱う情報と、その送信先",
-    body: `Glassframe Connectorは、ツールバーボタン、右クリックメニュー（「この動画をGlassframeで表示」）、またはキーボードショートカットでタブ上で開始するまで、何も動作しません。開始後は、以下の情報をお使いのMac内でのみ処理します。
+    heading: "Macアプリ",
+    body: `Glassframeは、映像を画面上に透過オーバーレイとして表示します。フレームは表示後に破棄され、録画・保存・アップロードされることはありません。音声は取得しません。
 
-[選択したタブの映像フレーム]
-Glassframeのオーバーレイに映像を表示するために使用します。お使いのMac上でエンコードされ、127.0.0.1のGlassframeアプリにのみ送信されます。
+[画面収録の権限]
+「動画アプリを表示…」を選択して他のアプリのウインドウを表示する場合にのみ使用します。選択したウインドウのみを、表示している間だけキャプチャします。
 
-[該当ページ内での動画の位置]
-スクロールやシアターモードに追従して動画部分のみを切り出すために使用します。拡張機能とローカルアプリの内部でのみ使用されます。
+[アクセシビリティの権限]
+任意です。QuickTime Player、IINA、VLC、mpvでGlassframeの再生／一時停止・スキップのショートカットを使う場合にのみ使用します。その際Glassframeは、対象アプリにそのアプリ自身の再生キーを送るか、QuickTime Playerのタイムラインを移動させます。Glassframeが入力内容を読み取ったり、記録したりすることはありません。
 
-[共有中のタブが前面かどうか、そのタイトル、閉じられたかどうか]
-オーバーレイが適切に退避し、正しく終了できるようにするために使用します。拡張機能とローカルアプリの内部でのみ使用されます。
+[ローカル接続]
+Glassframeは、同じMac上のChrome拡張機能と127.0.0.1を介してのみ通信します。インターネット接続は行いません。Chrome ウェブストアのページなどのリンクは、クリックした場合にのみブラウザで開きます。
 
-[どのタブを共有しているか]
-Chromeが拡張機能のバックグラウンドワーカーを再起動した場合でも共有を維持するために使用します。Chromeのセッションストレージに保存され、ブラウザのセッション終了時に削除されます。
-
-[再生・一時停止・シークの操作]
-Glassframeから動画を操作できるようにするために使用します。ローカルアプリから選択中のタブにのみ送信されます。
-
-本拡張機能は、閲覧履歴、Cookie、パスワード、フォーム入力内容、他のタブの内容を読み取りません。既存のChromeセッションをそのまま利用するため、いかなるウェブサイトのログイン情報も参照・保存しません。`,
+[設定]
+設定（表示の有無、ショートカット、オーバーレイの位置、最後に選択したウインドウの名前とタイトル、アプリごとに指定した映像領域）は、お使いのMac内のアプリ環境設定に保存されます。`,
   },
   {
-    heading: "行わないこと",
-    body: `Glassframeは以下を行いません。
+    heading: "Chrome拡張機能",
+    body: `「この動画をGlassframeで表示」（ツールバーボタン、右クリックメニュー、キーボードショートカット）を選択すると、拡張機能はChromeのタブキャプチャでそのタブ1つの画面を取得します。
 
-• Watanidまたは第三者へのデータ送信
-• 解析ツール、クラッシュレポート、トラッキング、広告SDKの使用
-• ユーザーアカウントの作成やサインインの要求
-• リモートコードの読み込み — 拡張機能のコードはすべてパッケージ内に同梱されています
-• ユーザーデータの販売・譲渡、Glassframe本来の目的と無関係な利用、信用度の判定や融資目的での利用`,
+• ページ内での動画の位置を特定して動画部分のみが送られるようにし、圧縮したうえで、同じMac上のGlassframeアプリへローカル接続（127.0.0.1）で送信します。インターネットには何も送信されません。
+• Glassframeの再生コントロールを使うと、そのタブの動画を再生・一時停止・スキップできます。
+• Chromeの実行中は、アプリがChromeの接続状態を表示できるよう、20秒ごとに127.0.0.1のGlassframeアプリへ接続確認を行います。この確認には拡張機能のバージョン番号のみが含まれます。設定ページも同じローカル接続を使って、アプリが起動しているかどうかを表示します。
+• 音声は取得しません。フレームは録画も保存もされません。`,
   },
   {
-    heading: "Chromeの権限",
-    body: `[tabCapture]
-ユーザーが明示的に選択したタブのみをキャプチャし、その映像をローカルのGlassframeアプリに表示します。
-
-[offscreen]
-拡張機能のサービスワーカーはメディアストリームを利用できないため、タブのキャプチャと映像エンコード（WebCodecs）をオフスクリーンドキュメントで実行します。
-
-[activeTab]
-ユーザーが実行したタブに対してのみ動作します。
-
-[scripting]
-選択したタブに小さなスクリプトを挿入し、動画の位置を特定するほか、Glassframeのボタンで再生・一時停止・シークを行います。
-
-[tabs]
-共有中のタブが前面になったか、タイトルが変わったか、閉じられたかを検知します。
-
-[storage]
-共有中のタブの情報を、セッションストレージにのみ保持します。
-
-[contextMenus]
-「この動画をGlassframeで表示」および「Glassframeを停止」のメニュー項目を追加します。`,
+    heading: "拡張機能が保存するデータ",
+    body: `現在表示中のタブのIDと、そのタブで設定ページを既に表示したかどうかのみを保存します。いずれもChromeのセッションストレージに保持され、Chromeの終了時に削除されます。`,
   },
   {
-    heading: "Chrome ウェブストア ユーザーデータ ポリシー",
-    body: `Glassframe ConnectorによるChrome APIから受け取った情報の利用は、限定利用（Limited Use）の要件を含む「Chrome ウェブストア ユーザーデータ ポリシー」を遵守します。
-
-Chrome ウェブストア ユーザーデータ ポリシー:
-https://developer.chrome.com/docs/webstore/program-policies/policies`,
-  },
-  {
-    heading: "児童のプライバシー",
-    body: `Glassframeは、児童を含むいかなる方からも、情報を意図的に収集することはありません。`,
-  },
-  {
-    heading: "本ポリシーの変更",
-    body: `本ポリシーを変更する場合は、このページと上記の施行日を更新します。Glassframeがデータを新しい方法で扱うようになる場合は、そのバージョンが公開される前に本ページでお知らせします。`,
+    heading: "第三者への提供",
+    body: `いかなるデータも、誰にも共有されません。`,
   },
   {
     heading: "お問い合わせ",
@@ -1573,19 +1456,19 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
     en: {
       appName: "Glassframe",
       labels: LABELS["en"],
-      effectiveDate: "2026-09-27",
+      effectiveDate: "2026-09-30",
       sections: glassframeSectionsEn,
     },
     ko: {
       appName: "Glassframe",
       labels: LABELS["ko"],
-      effectiveDate: "2026-09-27",
+      effectiveDate: "2026-09-30",
       sections: glassframeSectionsKo,
     },
     ja: {
       appName: "Glassframe",
       labels: LABELS["ja"],
-      effectiveDate: "2026-09-27",
+      effectiveDate: "2026-09-30",
       sections: glassframeSectionsJa,
     },
   },
