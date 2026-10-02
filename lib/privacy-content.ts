@@ -1263,6 +1263,13 @@ Your settings — visibility, shortcuts, overlay position, the name and title of
     body: `No data is shared with anyone.`,
   },
   {
+    heading: "Chrome Web Store User Data Policy",
+    body: `The use of information received from Chrome APIs by Glassframe Connector adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.
+
+Chrome Web Store User Data Policy:
+https://developer.chrome.com/docs/webstore/program-policies/policies`,
+  },
+  {
     heading: "Contact",
     body: `For privacy-related questions, please contact us at:
 
@@ -1312,6 +1319,13 @@ Glassframe은 같은 Mac 안의 Chrome 확장 프로그램과 127.0.0.1을 통�
     body: `어떠한 데이터도 누구에게도 공유되지 않습니다.`,
   },
   {
+    heading: "Chrome 웹 스토어 사용자 데이터 정책",
+    body: `Glassframe Connector가 Chrome API로부터 받은 정보의 사용은, 제한적 사용(Limited Use) 요건을 포함한 Chrome 웹 스토어 사용자 데이터 정책을 준수합니다.
+
+Chrome 웹 스토어 사용자 데이터 정책:
+https://developer.chrome.com/docs/webstore/program-policies/policies`,
+  },
+  {
     heading: "문의",
     body: `개인정보 관련 문의는 아래로 연락해 주세요.
 
@@ -1359,6 +1373,13 @@ Glassframeは、同じMac上のChrome拡張機能と127.0.0.1を介してのみ�
   {
     heading: "第三者への提供",
     body: `いかなるデータも、誰にも共有されません。`,
+  },
+  {
+    heading: "Chrome ウェブストア ユーザーデータ ポリシー",
+    body: `Glassframe ConnectorによるChrome APIから受け取った情報の利用は、限定利用（Limited Use）の要件を含む「Chrome ウェブストア ユーザーデータ ポリシー」を遵守します。
+
+Chrome ウェブストア ユーザーデータ ポリシー:
+https://developer.chrome.com/docs/webstore/program-policies/policies`,
   },
   {
     heading: "お問い合わせ",
