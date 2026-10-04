@@ -1236,8 +1236,10 @@ Glassframe does not collect, store, sell or share any personal data. Video never
 [Screen Recording permission]
 Used only when you choose "Show a Video App…" to show another app's window. Only the window you pick is captured, and only while it is shown.
 
-[Accessibility permission]
-Optional. Used only if you use Glassframe's play/pause and skip shortcuts with QuickTime Player, IINA, VLC or mpv: Glassframe then sends that app its own playback keys, or moves QuickTime Player's timeline. Glassframe does not read, log or record what you type.
+[Accessibility permission — direct download build only]
+The Mac App Store build never requests this permission; there the playback shortcuts work with Chrome videos only.
+
+Optional in the direct download build. Used only if you use Glassframe's play/pause and skip shortcuts with QuickTime Player, IINA, VLC or mpv: Glassframe then sends that app its own playback keys, or moves QuickTime Player's timeline. Glassframe does not read, log or record what you type.
 
 [Local connection]
 Glassframe communicates only with its Chrome extension on the same Mac, over 127.0.0.1. It makes no internet connections. Links such as the Chrome Web Store page open in your browser only when you click them.
@@ -1292,8 +1294,10 @@ Glassframe은 어떠한 개인정보도 수집·저장·판매·공유하지 않
 [화면 기록 권한]
 "영상 앱 표시…"를 선택해 다른 앱의 창을 표시할 때만 사용됩니다. 사용자가 선택한 창만, 표시되는 동안에만 캡처합니다.
 
-[손쉬운 사용 권한]
-선택 사항입니다. QuickTime Player, IINA, VLC, mpv에서 Glassframe의 재생/일시정지 및 건너뛰기 단축키를 사용할 때만 쓰입니다. 이때 Glassframe은 해당 앱에 그 앱 자체의 재생 키를 전달하거나, QuickTime Player의 타임라인을 이동시킵니다. Glassframe은 사용자가 입력하는 내용을 읽거나 기록하지 않습니다.
+[손쉬운 사용 권한 — 직접 다운로드판 전용]
+Mac App Store판은 이 권한을 요청하지 않으며, 해당 빌드에서는 재생 단축키가 Chrome 동영상에서만 작동합니다.
+
+직접 다운로드판에서는 선택 사항입니다. QuickTime Player, IINA, VLC, mpv에서 Glassframe의 재생/일시정지 및 건너뛰기 단축키를 사용할 때만 쓰입니다. 이때 Glassframe은 해당 앱에 그 앱 자체의 재생 키를 전달하거나, QuickTime Player의 타임라인을 이동시킵니다. Glassframe은 사용자가 입력하는 내용을 읽거나 기록하지 않습니다.
 
 [로컬 연결]
 Glassframe은 같은 Mac 안의 Chrome 확장 프로그램과 127.0.0.1을 통해서만 통신합니다. 인터넷 연결은 하지 않습니다. Chrome 웹 스토어 페이지와 같은 링크는 사용자가 클릭할 때만 브라우저에서 열립니다.
@@ -1348,8 +1352,10 @@ Glassframeは、いかなる個人データも収集・保存・販売・共有�
 [画面収録の権限]
 「動画アプリを表示…」を選択して他のアプリのウインドウを表示する場合にのみ使用します。選択したウインドウのみを、表示している間だけキャプチャします。
 
-[アクセシビリティの権限]
-任意です。QuickTime Player、IINA、VLC、mpvでGlassframeの再生／一時停止・スキップのショートカットを使う場合にのみ使用します。その際Glassframeは、対象アプリにそのアプリ自身の再生キーを送るか、QuickTime Playerのタイムラインを移動させます。Glassframeが入力内容を読み取ったり、記録したりすることはありません。
+[アクセシビリティの権限 — 直接ダウンロード版のみ]
+Mac App Store版はこの権限を要求せず、同版では再生のショートカットはChromeの動画でのみ機能します。
+
+直接ダウンロード版では任意です。QuickTime Player、IINA、VLC、mpvでGlassframeの再生／一時停止・スキップのショートカットを使う場合にのみ使用します。その際Glassframeは、対象アプリにそのアプリ自身の再生キーを送るか、QuickTime Playerのタイムラインを移動させます。Glassframeが入力内容を読み取ったり、記録したりすることはありません。
 
 [ローカル接続]
 Glassframeは、同じMac上のChrome拡張機能と127.0.0.1を介してのみ通信します。インターネット接続は行いません。Chrome ウェブストアのページなどのリンクは、クリックした場合にのみブラウザで開きます。
@@ -1477,19 +1483,19 @@ const privacyBySlug: Record<PrivacySlug, Record<Locale, PrivacyContent>> = {
     en: {
       appName: "Glassframe",
       labels: LABELS["en"],
-      effectiveDate: "2026-09-30",
+      effectiveDate: "2026-10-04",
       sections: glassframeSectionsEn,
     },
     ko: {
       appName: "Glassframe",
       labels: LABELS["ko"],
-      effectiveDate: "2026-09-30",
+      effectiveDate: "2026-10-04",
       sections: glassframeSectionsKo,
     },
     ja: {
       appName: "Glassframe",
       labels: LABELS["ja"],
-      effectiveDate: "2026-09-30",
+      effectiveDate: "2026-10-04",
       sections: glassframeSectionsJa,
     },
   },
