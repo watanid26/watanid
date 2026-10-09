@@ -19,8 +19,7 @@
     "ja": {
       "title": "Glassframe",
       "description": "Chromeのどんな動画もMacの画面上に浮かべる、作業中も消えないグラスオーバーレイ。"
-    },
-    "chromeStoreUrl": "https://chromewebstore.google.com/detail/dlbafepehoeneoocijhkogbkcdgmekpi"
+    }
   },
   {
     "slug": "glancememo",
@@ -30,7 +29,7 @@
     "order": -2,
     "featured": false,
     "playStoreUrl": "",
-    "appStoreUrl": "",
+    "appStoreUrl": "https://apps.apple.com/kr/app/glancememo/id6794798509?l=en-GB&platform=watch",
     "en": {
       "title": "GlanceMemo",
       "description": "A quick memo app that keeps notes, reminders, and settings on your iPhone only."
