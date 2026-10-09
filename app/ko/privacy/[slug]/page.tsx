@@ -5,7 +5,7 @@ import { getPrivacyContent, isPrivacySlug, PRIVACY_SLUGS } from "@/lib/privacy-c
 
 type Props = { params: { slug: string } };
 
-const LOCALE = "en" as const;
+const LOCALE = "ko" as const;
 
 export async function generateStaticParams() {
   return PRIVACY_SLUGS.map((slug) => ({ slug }));
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = getPrivacyContent(params.slug, LOCALE);
   return {
     title: `${c.appName} — ${c.labels.pageTitle}`,
-    description: `How ${c.appName} handles your data. No accounts and no tracking — the full policy from Watanid.`,
+    description: `${c.appName}이(가) 데이터를 다루는 방식. 계정도 추적도 없습니다 — Watanid의 전문 방침.`,
     alternates: alternatesFor(LOCALE, `/privacy/${params.slug}`),
     robots: { index: true, follow: true },
   };

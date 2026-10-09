@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { localeHref } from "@/lib/locale-routing";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { HeaderMobileMenu } from "@/components/HeaderMobileMenu";
 import type { Locale } from "@/lib/i18n-messages";
@@ -14,20 +15,20 @@ export function Header({
 }) {
   const t = getMessages(locale);
   const links = [
-    { href: "/", label: t.nav.home },
-    { href: "/apps", label: t.nav.apps },
+    { href: localeHref(locale, "/"), label: t.nav.home },
+    { href: localeHref(locale, "/apps"), label: t.nav.apps },
     ...menuPages.map((p) => ({
-      href: `/${p.slug}`,
+      href: localeHref(locale, `/${p.slug}`),
       label: p.title,
     })),
-    { href: "/about", label: t.nav.about },
+    { href: localeHref(locale, "/about"), label: t.nav.about },
   ];
 
   return (
     <header className="sticky top-0 z-20 border-b border-black/10 bg-white/95 backdrop-blur-sm supports-[backdrop-filter]:bg-white/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 md:px-10 md:py-5">
         <Link
-          href="/"
+          href={localeHref(locale, "/")}
           className="text-xl font-semibold tracking-tight text-primary transition-colors duration-300 hover:text-primary/80"
         >
           Watanid

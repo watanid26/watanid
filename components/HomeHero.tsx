@@ -1,6 +1,12 @@
 import { ButtonLink } from "@/components/Button";
 
-export function HomeHero({ viewAppsLabel }: { viewAppsLabel: string }) {
+export function HomeHero({
+  viewAppsLabel,
+  appsHref,
+}: {
+  viewAppsLabel: string;
+  appsHref: string;
+}) {
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
       <div
@@ -28,7 +34,7 @@ export function HomeHero({ viewAppsLabel }: { viewAppsLabel: string }) {
       </div>
 
       <div className="mt-6 md:mt-8">
-        <ButtonLink href="/apps" variant="primary" surface="dark">
+        <ButtonLink href={appsHref} variant="primary" surface="dark">
           {viewAppsLabel}
         </ButtonLink>
       </div>

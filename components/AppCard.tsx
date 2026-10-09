@@ -4,6 +4,7 @@ import { getMessages, type Locale } from "@/lib/i18n-messages";
 import { getAppCopy } from "@/lib/apps";
 import type { AppRecord } from "@/lib/types";
 import { StoreBadgeLinks } from "@/components/StoreBadgeLinks";
+import { localeHref } from "@/lib/locale-routing";
 import { hasVisibleStoreLinks } from "@/lib/store-links";
 
 export function AppCard({
@@ -22,7 +23,7 @@ export function AppCard({
     app.appStoreUrl,
     app.chromeStoreUrl,
   );
-  const privacyHref = `/privacy/${app.slug}`;
+  const privacyHref = localeHref(locale, `/privacy/${app.slug}`);
 
   return (
     <article

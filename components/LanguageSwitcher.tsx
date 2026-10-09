@@ -1,16 +1,19 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/i18n-messages";
-import { LOCALE_COOKIE, locales } from "@/lib/i18n-messages";
+import { locales } from "@/lib/i18n-messages";
+import { localeHref, splitLocalePath } from "@/lib/locale-routing";
 
+/**
+ * Real links to the equivalent URL in each locale, not a cookie write. The
+ * cookie approach served three languages from one URL, which left the Korean
+ * and Japanese pages invisible to search engines.
+ */
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
-  const router = useRouter();
-
-  function setLocale(nextLocale: Locale) {
-    document.cookie = `${LOCALE_COOKIE}=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
-    router.refresh();
-  }
+  const pathname = usePathname() ?? "/";
+  const { path } = splitLocalePath(pathname);
 
   return (
     <div
@@ -18,10 +21,11 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
       aria-label="Language switcher"
     >
       {locales.map((code) => (
-        <button
+        <Link
           key={code}
-          type="button"
-          onClick={() => setLocale(code)}
+          href={localeHref(code, path)}
+          hrefLang={code}
+          aria-current={locale === code ? "true" : undefined}
           className={`rounded-full px-2.5 py-1 text-[11px] font-medium uppercase tracking-widest transition-colors duration-300 ${
             locale === code
               ? "bg-primary text-white"
@@ -29,7 +33,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
           }`}
         >
           {code}
-        </button>
+        </Link>
       ))}
     </div>
   );

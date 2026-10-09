@@ -1,4 +1,3 @@
-export const LOCALE_COOKIE = "watanid_locale";
 export const locales = ["en", "ko", "ja"] as const;
 
 export type Locale = (typeof locales)[number];
