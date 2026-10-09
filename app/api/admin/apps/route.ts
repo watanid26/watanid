@@ -86,7 +86,13 @@ function validateApps(data: unknown): ValidationResult {
       return { ok: false, error: `Row ${slug}: ja block invalid` };
     }
 
-    for (const k of ["playStoreUrl", "appStoreUrl", "category", "version"] as const) {
+    for (const k of [
+      "playStoreUrl",
+      "appStoreUrl",
+      "chromeStoreUrl",
+      "category",
+      "version",
+    ] as const) {
       if (a[k] !== undefined && typeof a[k] !== "string") {
         return { ok: false, error: `Row ${slug}: ${k} must be a string when present` };
       }

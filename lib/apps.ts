@@ -124,6 +124,9 @@ export function normalizeAppRecord(input: unknown): AppRecord | null {
       ...(typeof a.appStoreUrl === "string"
         ? { appStoreUrl: a.appStoreUrl }
         : {}),
+      ...(typeof a.chromeStoreUrl === "string"
+        ? { chromeStoreUrl: a.chromeStoreUrl }
+        : {}),
       ...(typeof a.category === "string" && a.category.trim()
         ? { category: a.category.trim() }
         : {}),

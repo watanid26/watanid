@@ -19,6 +19,8 @@ export type AppRecord = {
   playStoreUrl?: string;
   /** App Store — detail page shows icon only when non-empty */
   appStoreUrl?: string;
+  /** Chrome Web Store — for extensions; shown only when non-empty */
+  chromeStoreUrl?: string;
   /** Optional editorial metadata (detail page) */
   category?: string;
   version?: string;

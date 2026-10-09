@@ -17,7 +17,11 @@ export function AppCard({
 }) {
   const copy = getAppCopy(app, locale);
   const t = getMessages(locale);
-  const showBadges = hasVisibleStoreLinks(app.playStoreUrl, app.appStoreUrl);
+  const showBadges = hasVisibleStoreLinks(
+    app.playStoreUrl,
+    app.appStoreUrl,
+    app.chromeStoreUrl,
+  );
   const privacyHref = `/privacy/${app.slug}`;
 
   return (
@@ -103,6 +107,7 @@ export function AppCard({
               variant="compact"
               playStoreUrl={app.playStoreUrl}
               appStoreUrl={app.appStoreUrl}
+              chromeStoreUrl={app.chromeStoreUrl}
             />
           </div>
         ) : null}

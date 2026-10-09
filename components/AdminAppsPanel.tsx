@@ -32,6 +32,7 @@ function emptyAppRow(order: number): AppRow {
     featured: false,
     playStoreUrl: "",
     appStoreUrl: "",
+    chromeStoreUrl: "",
     en: emptyLocale(),
     ko: emptyLocale(),
     ja: emptyLocale(),
@@ -358,11 +359,13 @@ export function AdminAppsPanel() {
                     {hasVisibleStoreLinks(
                       currentApp.playStoreUrl,
                       currentApp.appStoreUrl,
+                      currentApp.chromeStoreUrl,
                     ) ? (
                       <div className="mt-3">
                         <StoreBadgeLinks
                           playStoreUrl={currentApp.playStoreUrl}
                           appStoreUrl={currentApp.appStoreUrl}
+                          chromeStoreUrl={currentApp.chromeStoreUrl}
                         />
                       </div>
                     ) : (
@@ -461,6 +464,21 @@ export function AdminAppsPanel() {
                     value={currentApp.appStoreUrl ?? ""}
                     onChange={(e) =>
                       updateApp(currentApp.__id, { appStoreUrl: e.target.value })
+                    }
+                  />
+                </label>
+                <label className="block sm:col-span-2">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-black/40">
+                    Chrome Web Store
+                  </span>
+                  <input
+                    className="mt-2 w-full rounded-md border border-black/10 px-3 py-2 text-sm"
+                    placeholder="https://chromewebstore.google.com/detail/..."
+                    value={currentApp.chromeStoreUrl ?? ""}
+                    onChange={(e) =>
+                      updateApp(currentApp.__id, {
+                        chromeStoreUrl: e.target.value,
+                      })
                     }
                   />
                 </label>

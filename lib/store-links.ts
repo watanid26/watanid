@@ -14,10 +14,10 @@ export function isSafeExternalUrl(href: string): boolean {
 export function hasVisibleStoreLinks(
   playStoreUrl?: string,
   appStoreUrl?: string,
+  chromeStoreUrl?: string,
 ): boolean {
-  const play = playStoreUrl?.trim() ?? "";
-  const app = appStoreUrl?.trim() ?? "";
-  return (
-    (!!play && isSafeExternalUrl(play)) || (!!app && isSafeExternalUrl(app))
-  );
+  return [playStoreUrl, appStoreUrl, chromeStoreUrl].some((url) => {
+    const t = url?.trim() ?? "";
+    return !!t && isSafeExternalUrl(t);
+  });
 }

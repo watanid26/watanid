@@ -11,20 +11,24 @@ const BADGE_APP_STORE = "/images/badge-app-store.png";
 export function StoreBadgeLinks({
   playStoreUrl,
   appStoreUrl,
+  chromeStoreUrl,
   className = "",
   variant = "default",
 }: {
   playStoreUrl?: string;
   appStoreUrl?: string;
+  chromeStoreUrl?: string;
   className?: string;
   /** `compact` — smaller badges for app cards (bottom-right) */
   variant?: "default" | "compact";
 }) {
   const play = playStoreUrl?.trim() ?? "";
   const app = appStoreUrl?.trim() ?? "";
+  const chrome = chromeStoreUrl?.trim() ?? "";
   const showPlay = play && isSafeExternalUrl(play);
   const showApp = app && isSafeExternalUrl(app);
-  if (!showPlay && !showApp) return null;
+  const showChrome = chrome && isSafeExternalUrl(chrome);
+  if (!showPlay && !showApp && !showChrome) return null;
 
   const compact = variant === "compact";
   const linkClass = compact
@@ -64,6 +68,23 @@ export function StoreBadgeLinks({
             height={40}
             className={`${imgPlay} w-auto object-contain object-center`}
           />
+        </a>
+      ) : null}
+      {showChrome ? (
+        <a
+          href={chrome}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+          aria-label="Chrome 웹 스토어에서 설치"
+        >
+          {/* Text rather than an image: there is no official badge asset in the
+              project, and inventing a Google-branded one would misrepresent it. */}
+          <span
+            className={`${compact ? "h-7 text-[11px] sm:h-8" : "h-9 text-sm md:h-10"} inline-flex items-center whitespace-nowrap px-1 font-semibold tracking-tight text-stone-900`}
+          >
+            Chrome Web Store
+          </span>
         </a>
       ) : null}
       {showApp ? (

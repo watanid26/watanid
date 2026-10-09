@@ -19,7 +19,8 @@
     "ja": {
       "title": "Glassframe",
       "description": "Chromeのどんな動画もMacの画面上に浮かべる、作業中も消えないグラスオーバーレイ。"
-    }
+    },
+    "chromeStoreUrl": "https://chromewebstore.google.com/detail/dlbafepehoeneoocijhkogbkcdgmekpi"
   },
   {
     "slug": "glancememo",
