@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getCurrentLocale } from "@/lib/i18n";
 import { getMenuPages } from "@/lib/pages";
+import { SITE_URL } from "@/lib/site-url";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,9 +13,30 @@ const inter = Inter({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Watanid builds small, focused Mac and mobile apps — Kanji 2136 for learning Japanese, Glassframe for see-through video on macOS, and more.";
+
 export const metadata: Metadata = {
-  title: { default: "Watanid", template: "%s · Watanid" },
-  description: "What I need — a minimal brand hub.",
+  // Required for Next.js to resolve relative OG image paths to absolute URLs.
+  metadataBase: new URL(SITE_URL),
+  title: { default: "Watanid — small apps for real routines", template: "%s · Watanid" },
+  description: DESCRIPTION,
+  applicationName: "Watanid",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Watanid",
+    title: "Watanid — small apps for real routines",
+    description: DESCRIPTION,
+    url: "/",
+    images: [{ url: "/og/default.png", width: 1200, height: 630, alt: "Watanid" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Watanid — small apps for real routines",
+    description: DESCRIPTION,
+    images: ["/og/default.png"],
+  },
   icons: {
     icon: [{ url: "/logo/main.png", type: "image/png" }],
   },

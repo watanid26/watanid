@@ -5,7 +5,12 @@ import { Container } from "@/components/Container";
 import { filterPublished, readAllApps, sortAppsByOrder } from "@/lib/apps";
 import { getCurrentLocale, getMessages } from "@/lib/i18n";
 
-export const metadata = { title: "Apps" };
+export const metadata = {
+  title: "Apps",
+  description:
+    "Every app from Watanid: Kanji 2136 for the 2,136 jōyō kanji, Glassframe for see-through video on macOS, ColorzCam, and GlanceMemo.",
+  alternates: { canonical: "/apps" },
+};
 
 export default async function AppsPage() {
   const locale = await getCurrentLocale();

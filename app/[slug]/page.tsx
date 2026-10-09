@@ -4,6 +4,14 @@ import { readAllPages } from "@/lib/pages";
 
 type Props = { params: { slug: string } };
 
+/**
+ * The root layout reads the locale cookie, which a statically generated render
+ * may not do. Without this the route threw DYNAMIC_SERVER_USAGE for any slug
+ * outside generateStaticParams, so unknown URLs answered 500 instead of 404.
+ * `/privacy/[slug]` opts out for the same reason.
+ */
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   const pages = await readAllPages();
   return pages.map((p) => ({ slug: p.slug }));

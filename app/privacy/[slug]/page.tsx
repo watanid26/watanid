@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: Props) {
   const c = getPrivacyContent(params.slug, locale);
   return {
     title: `${c.appName} — ${c.labels.pageTitle}`,
+    description: `How ${c.appName} handles your data. No accounts and no tracking — the full policy from Watanid.`,
+    alternates: { canonical: `/privacy/${params.slug}` },
     robots: { index: true, follow: true },
   };
 }
