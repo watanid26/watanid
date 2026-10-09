@@ -4,6 +4,8 @@ export type AppStatus = "published" | "draft";
 export type AppLocaleBlock = {
   title: string;
   description: string;
+  /** Optional bullets for the detail page; empty renders nothing. */
+  features?: string[];
 };
 
 export type AppRecord = {

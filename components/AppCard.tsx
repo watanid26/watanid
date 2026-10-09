@@ -23,6 +23,7 @@ export function AppCard({
     app.appStoreUrl,
     app.chromeStoreUrl,
   );
+  const detailHref = localeHref(locale, `/apps/${app.slug}`);
   const privacyHref = localeHref(locale, `/privacy/${app.slug}`);
 
   return (
@@ -36,7 +37,7 @@ export function AppCard({
       ].join(" ")}
     >
       <Link
-        href={privacyHref}
+        href={detailHref}
         aria-label={`${copy.title} — ${t.apps.privacyAria}`}
         className="block cursor-pointer"
       >
@@ -82,7 +83,7 @@ export function AppCard({
           featured ? "md:px-10 md:pb-10 md:pt-10" : "",
         ].join(" ")}
       >
-        <Link href={privacyHref} className="group/text block min-w-0 cursor-pointer">
+        <Link href={detailHref} className="group/text block min-w-0 cursor-pointer">
           <h3
             className={[
               "font-semibold tracking-tight text-stone-900",

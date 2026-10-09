@@ -19,7 +19,12 @@ function bad(msg: string) {
 function validateLocaleBlock(x: unknown): boolean {
   if (typeof x !== "object" || x === null) return false;
   const b = x as Record<string, unknown>;
-  return typeof b.title === "string" && typeof b.description === "string";
+  if (typeof b.title !== "string" || typeof b.description !== "string") return false;
+  if (b.features !== undefined) {
+    if (!Array.isArray(b.features)) return false;
+    if (b.features.some((f) => typeof f !== "string")) return false;
+  }
+  return true;
 }
 
 type ValidationResult =

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n-messages";
 import { DEFAULT_LOCALE, localeHref } from "@/lib/locale-routing";
+import { filterPublished, readAllApps } from "@/lib/apps";
 import { PRIVACY_SLUGS } from "@/lib/privacy-content";
 import { readAllPages } from "@/lib/pages";
 import { SITE_URL } from "@/lib/site-url";
@@ -49,6 +50,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.4,
     })),
   ];
+
+  for (const app of filterPublished(await readAllApps())) {
+    entries.push({ path: `/apps/${app.slug}`, changeFrequency: "monthly", priority: 0.8 });
+  }
 
   // Custom pages are admin-authored and may be empty; readAllPages fails soft.
   const pages = await readAllPages();

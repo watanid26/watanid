@@ -554,6 +554,25 @@ export function AdminAppsPanel() {
                       }
                     />
                   </label>
+                  <label className="block sm:col-span-2">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-black/40">
+                      Features (one per line)
+                    </span>
+                    <textarea
+                      className="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm"
+                      rows={4}
+                      placeholder={"한 줄에 하나씩 적으면 앱 상세 페이지에 목록으로 표시됩니다.\n비워두면 그 영역이 아예 나오지 않습니다."}
+                      value={(currentApp[appLang].features ?? []).join("\n")}
+                      onChange={(e) =>
+                        updateAppLocale(currentApp.__id, appLang, {
+                          features: e.target.value
+                            .split("\n")
+                            .map((f) => f.trim())
+                            .filter(Boolean),
+                        })
+                      }
+                    />
+                  </label>
                 </div>
               </div>
             </div>

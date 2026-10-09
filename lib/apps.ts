@@ -40,9 +40,13 @@ function emptyBlock(): AppLocaleBlock {
 function normalizeLocaleBlock(raw: unknown): AppLocaleBlock {
   if (typeof raw !== "object" || raw === null) return emptyBlock();
   const b = raw as Record<string, unknown>;
+  const features = Array.isArray(b.features)
+    ? b.features.filter((f): f is string => typeof f === "string" && f.trim() !== "")
+    : undefined;
   return {
     title: typeof b.title === "string" ? b.title : "",
     description: typeof b.description === "string" ? b.description : "",
+    ...(features && features.length > 0 ? { features } : {}),
   };
 }
 
